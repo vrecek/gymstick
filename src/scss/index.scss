@@ -19,8 +19,9 @@ body {
     scroll-behavior: smooth;
     width: 100vw;
     min-height: 100vh;
-    background: $clr-white;
+    background: $clr-black;
     font-family: 'Raleway', sans-serif;
+    color: $clr-white;
 
     ::-webkit-scrollbar {
         width: 4px;

@@ -1,0 +1,48 @@
+@import '../config';
+
+header.homepage-header {
+    padding-top: $navHeight;
+    height: 100vh;
+    background-image: linear-gradient(rgb(30, 30, 30, .3), rgb(30, 30, 30, .6)), url('../images/header.jpg');
+    background-size: cover;
+    @include Flex(c, c, c);
+
+    h1 {
+        font-family: 'Arvo', serif;
+        font-weight: 800;
+        font-size: 4.5rem;
+        width: 80%;
+        text-align: center;
+        text-shadow: 0 0 5px orangered;
+    }
+
+    p {
+        font-size: 1.25rem;
+        width: 50%;
+        text-align: center;
+        margin: 1em 0;
+    }
+
+    button {
+        padding: 1.25em 2em;
+        border-radius: 1em;
+        background: transparent;
+        border: 2px solid orange;
+        outline: 0;
+        cursor: pointer;
+        transition: .5s;
+
+        label {
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: orange;
+            transition: .5s;
+        }
+
+        &:hover {
+            background: orangered;
+            border-color: orangered;
+            label { color: $clr-white; }
+        }
+    }
+}
