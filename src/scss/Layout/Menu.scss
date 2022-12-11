@@ -69,7 +69,7 @@ aside.layout-menu {
             &.home {
                 font-size: 3rem;
                 padding: .75em 0;
-                color: darken($clr-grey, 40%);
+                color: $clr-grey;
                 font-weight: 800;
 
                 &::before { left: -.5em; }

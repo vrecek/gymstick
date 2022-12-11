@@ -1,0 +1,149 @@
+@import '../config';
+
+section.introduction {
+    height: 100vh;
+    background: rgba(245, 245, 245, .8);
+    padding: 2.5em 1.5em;
+    @include Flex(sa);
+    position: relative;
+
+    div.bg {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 40%;
+        height: 50%;
+        border-radius: 50% 50% 0 0;
+        background: $clr-orange;
+    }
+
+    section.image-section,
+    article.text-section {
+        position: relative;
+        z-index: 2;
+    }
+
+    section.image-section {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+
+        section.redirect {
+            @include Flex(sb, none);
+            color: $clr-black;
+            padding-bottom: 2em;
+            cursor: pointer;
+            transition: .3s;
+            position: relative;
+
+            p {
+                font-weight: 600;
+                font-size: 1.25rem;
+                letter-spacing: 1px;
+            }
+
+            span {
+                @include Rectangle(30px);
+                transition: 1s;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                translate: -50% 0;
+                height: 2px;
+                width: 100%;
+                scale: 0 1;
+                background: $clr-orange;
+                transition: 1s;
+            }
+
+            &:hover {
+                span {
+                    rotate: 180deg;
+                    color: $clr-orange;
+                }
+
+                &::before {
+                    scale: 1 1;
+                }
+            }
+        }
+
+        figure {
+            width: 100%;
+            flex-grow: 1;
+            @include Flex(fe, c);
+
+            img {
+                height: 100%;
+            }
+        }
+    }
+
+    article.text-section {
+        width: 45%;
+        color: $clr-black;
+        @include Flex(sa, none, c);
+
+        section.header-icon {
+            @include Flex(fe, c);
+            flex-direction: row-reverse;
+            color: #707070;
+
+            span {
+                @include Rectangle(50px);
+                margin-right: .25em;
+                border-radius: .5em;
+                border: 2px solid $clr-orange;
+                @include Flex(c, c);
+                color: $clr-orange;
+
+                svg {
+                    @include FullSize(70%);
+                }
+            }
+
+            h3 {
+                font-weight: 800;
+                font-family: 'Arvo', serif;
+            }
+        }
+
+        section.text-container {
+            h2 {
+                font-size: 2.75rem;
+                margin-bottom: .25em;
+                font-weight: 800;
+            }
+
+            p {
+                font-size: 1.1rem;
+                border-left: 3px solid $clr-orange;
+                padding-left: .55em;
+            }
+        }
+
+        button {
+            padding: 1.25em 0;
+            background: $clr-orange;
+            outline: 0;
+            border: 0;
+            cursor: pointer;
+            transition: 1s;
+            border-radius: .25em;
+
+            label {
+                color: $clr-white;
+                font-weight: 600;
+                font-size: 1.1rem;
+            }
+
+            &:hover {
+                background: orangered;
+            }
+        }
+    }
+}
