@@ -20,6 +20,9 @@ body {
     width: 100vw;
     min-height: 100vh;
     background: $clr-black;
+    background: url('../images/background.jpg');
+    background-attachment: fixed;
+    background-size: cover;
     font-family: 'Raleway', sans-serif;
     color: $clr-white;
 
