@@ -1,0 +1,37 @@
+/*
+    font-family: 'Raleway', sans-serif;
+    
+    font-family: 'Arvo', serif;
+    400 800
+*/
+
+@import './config';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+body {
+    scroll-behavior: smooth;
+    width: 100vw;
+    min-height: 100vh;
+    background: $clr-white;
+    font-family: 'Raleway', sans-serif;
+
+    ::-webkit-scrollbar {
+        width: 4px;
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        width: 100%;
+        border-radius: 1em;
+        background: grey;
+    }
+
+    svg { @include FullSize; pointer-events: none; }
+}

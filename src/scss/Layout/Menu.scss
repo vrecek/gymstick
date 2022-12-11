@@ -1,0 +1,84 @@
+@import '../config';
+
+aside.layout-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    translate: 100% 0;
+    transition: .5s;
+    padding: .75em 0 2em 0;
+    backdrop-filter: blur(5px) sepia(150%);
+    background: rgba(30, 30, 30, .75);
+    @include Flex(sb, none, c);
+
+    span.menu-toggler {
+        @include Rectangle(40px);
+        cursor: pointer;
+        margin: 0 2em 0 auto;
+    }
+
+    section.socials,
+    ul.links.aside-list {
+        margin-left: 8em;
+    }
+
+    section.socials {
+        @include Flex(none, c);
+
+        span {
+            @include Rectangle(50px);
+            margin-right: 1em;
+            cursor: pointer;
+            transition: 1s;
+
+            &:hover { scale: 1.2; color: orange; }
+        }
+    }
+
+    ul.links.aside-list {
+        list-style: none;
+
+        li {
+            font-size: 1.5rem;
+            padding: 1.5em 0;
+            font-weight: 600;
+            letter-spacing: 3px;
+            width: max-content;
+            cursor: pointer;
+            transition: 1s;
+            position: relative;
+            color: darken($clr-white, 35%);
+            text-transform: uppercase;
+            
+            &::before {
+                content: '';
+                position: absolute;
+                left: -1em;
+                top: 50%;
+                translate: 0 -50%;
+                width: 3px;
+                height: 100%;
+                scale: 1 0;
+                transition: .3s;
+                background: orange;
+            }
+
+            &.home {
+                font-size: 3rem;
+                padding: .75em 0;
+                color: darken($clr-grey, 40%);
+                font-weight: 800;
+
+                &::before { left: -.5em; }
+            }
+
+
+            &:hover {
+                &::before { scale: 1; }
+            }
+        }
+    }
+}
