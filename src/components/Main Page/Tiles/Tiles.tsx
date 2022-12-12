@@ -5,6 +5,7 @@ import {GiWeightLiftingUp} from 'react-icons/gi'
 import {AiOutlineQuestionCircle} from 'react-icons/ai'
 import { FaMoneyBillAlt } from 'react-icons/fa'
 import '../../../css/Tiles.css'
+import TextHeaderWrap from './TextHeaderWrap'
 
 const Tiles = () => {
     const tiles: TileDetails[] = [
@@ -34,7 +35,7 @@ const Tiles = () => {
     return (
         <section className="tiles">
 
-            <p className="section-header">Why you should consider us</p>
+            <TextHeaderWrap />
 
             <section className="container">
 

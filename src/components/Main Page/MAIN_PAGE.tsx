@@ -3,6 +3,7 @@ import '../../css/MAIN_PAGE.css'
 import LayoutWrap from '../Layout/LayoutWrap'
 import Header from './Header/Header'
 import Introduction from './Introduction/Introduction'
+import Slider from './Slider/Slider'
 import Tiles from './Tiles/Tiles'
 
 const MAIN_PAGE = () => {
@@ -16,6 +17,8 @@ const MAIN_PAGE = () => {
                 <Introduction />
 
                 <Tiles />
+
+                <Slider />
 
             </main>
 

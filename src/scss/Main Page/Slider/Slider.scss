@@ -1,0 +1,27 @@
+@import '../../config';
+
+section.slider-section {
+    height: 100vh;
+    @include Flex(sa, c);
+    padding: .5em;
+    background: $bgTransparent;
+    position: relative;
+    overflow: hidden;
+
+    section.slider-container,
+    article.text-container {
+        position: relative;
+        z-index: 2;
+    }
+
+    div.bg {
+        position: absolute;
+        height: 100%;
+        width: 30%;
+        background: $clr-orange;
+        bottom: 0;
+        left: 25%;
+        translate: -25% 0;
+        transform: skew(45deg);
+    }
+}

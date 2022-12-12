@@ -5,27 +5,30 @@ section.tiles {
     @include Flex(sa, none, c);
     padding: 2em 0;
     @include Center(90%);
-    overflow: hidden;
 
-    p.section-header {
-        text-shadow: 0 0 4px $clr-black;
-        font-weight: 800;
-        font-family: 'Arvo', serif;
-        font-size: 2rem;
-        position: relative;
-        z-index: -1;
-        width: max-content;
-        padding-right: 1em;
-
-        &::before {
-            content: '';
-            width: 100vw;
-            height: 4px;
-            background: $clr-white;
-            position: absolute;
-            top: 50%;
-            left: 100%;
-            translate: 0 -50%;
+    div.text-header {
+        overflow: hidden;
+        
+        p.section-header {
+            text-shadow: 0 0 4px $clr-black;
+            font-weight: 800;
+            font-family: 'Arvo', serif;
+            font-size: 2rem;
+            position: relative;
+            z-index: -1;
+            width: max-content;
+            padding-right: 1em;
+    
+            &::before {
+                content: '';
+                width: 100vw;
+                height: 4px;
+                background: $clr-white;
+                position: absolute;
+                top: 50%;
+                left: 100%;
+                translate: 0 -50%;
+            }
         }
     }
 
@@ -39,6 +42,29 @@ section.tiles {
         padding: 4em 2em;
         border-radius: 1em;
         background: #252525;
+        position: relative;
+
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            border-radius: 1em;
+            width: 20%;
+            aspect-ratio: 1;
+            z-index: -1;
+            background: $clr-blued;
+            box-shadow: 0 0 4px $clr-bluel, 0 0 8px $clr-bluel, 0 0 16px $clr-bluel;
+        }
+
+        &::before {
+            left: -5px;
+            top: -5px;
+        }
+
+        &::after {
+            right: -5px;
+            bottom: -5px;
+        }
 
         button {
             margin-top: 2em;

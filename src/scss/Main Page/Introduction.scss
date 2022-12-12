@@ -2,7 +2,7 @@
 
 section.introduction {
     height: 100vh;
-    background: rgba(245, 245, 245, .8);
+    background: $bgTransparent;
     padding: 2.5em 1.5em;
     @include Flex(sa);
     position: relative;

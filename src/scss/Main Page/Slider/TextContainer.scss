@@ -1,0 +1,44 @@
+@import '../../config';
+
+section.slider-section {
+    article.text-container {
+        width: 46%;
+        
+        p {
+            &.header {
+                font-size: 3.5em;
+                font-weight: 800;
+                color: $clr-orange;
+                text-shadow: 0 0 4px $clr-black;
+            }
+
+            &.text {
+                color: $clr-black;
+                font-size: 1.1rem;
+                margin: .75em 0 2em 0;
+                border-left: 3px solid $clr-blued;
+                padding-left: .5em;
+            }
+        }
+
+        button {
+            padding: 1em 2em;
+            background: $clr-blued;
+            cursor: pointer;
+            outline: 0;
+            border: 0;
+            transition: .5s;
+            border-radius: 2em;
+
+            label {
+                color: $clr-white;
+                font-weight: 500;
+            }
+
+            &:hover { 
+                border-radius: .25em;
+                background: royalblue; 
+            }
+        }
+    }
+}

@@ -1,0 +1,48 @@
+@import '../../config';
+
+section.slider-section {
+    section.slider-container {
+        width: 46%;
+        overflow: hidden;
+
+        div.moving {
+            width: 100%;
+            aspect-ratio: 1.25;
+            display: flex;
+            translate: -100% 0;
+            transition: .5s;
+
+            figure {
+                @include FullSize;
+                flex-shrink: 0;
+
+                img {
+                    @include FullSize;
+                    object-fit: cover;
+                    border-radius: .5em;
+                }
+            }
+        }
+
+        section.slider-buttons {
+            width: 100%;
+            @include Flex(c, c);
+            margin-top: 1em;
+
+            span {
+                @include Rectangle(22px);
+                border-radius: .25em;
+                background: $clr-white;
+                border: 1px solid grey;
+                margin: 0 .25em;
+                cursor: pointer;
+                transition: .3s;
+
+                &.active {
+                    background: $clr-orange;
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}
