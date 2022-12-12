@@ -1,0 +1,118 @@
+@import '../config';
+
+section.reviews {
+    min-height: 100vh;
+    position: relative;
+    background: $bgTransparent;
+    padding: 1.5em;
+    color: $clr-black;
+    overflow: hidden;
+
+    section.reviews-container {
+        @include Flex(sa);
+        flex-wrap: wrap;
+        z-index: 2;
+        position: relative;
+
+        article.review {
+            width: 40%;
+            margin-bottom: 2em;
+            padding: 1.5em;
+            border-radius: .5em;
+            background: $clr-white;
+
+            section {
+                &.review-socials {
+                    display: flex;
+
+                    span {
+                        @include Rectangle(40px);
+                        margin-right: .5em;
+                        cursor: pointer;
+                        transition: .5s;
+
+                        &:hover {
+                            scale: 1.2;
+                        }
+                    }
+                }
+
+                &.user {
+                    @include Flex(none, c);
+
+                    figure {
+                        width: 10%;
+                        aspect-ratio: 1;
+
+                        img {
+                            @include FullSize;
+                        }
+                    }
+    
+                    p {
+                        font-weight: 600;
+                        letter-spacing: -1px;
+                        margin-left: .5em;
+                    }
+                }
+
+                &.text-container {
+                    margin: 2em 0;
+                    padding: 1em;
+                    border-radius: .25em;
+                    position: relative;
+
+                    span {
+                        position: absolute;
+                        @include Rectangle(30px);
+                        left: 0;
+                        top: 0;
+                        translate: -50% -50%;
+                    }
+
+                    p {
+                        font-size: .95rem;
+                    }
+                }
+            }
+        }
+    }
+
+    section.text {
+        margin-bottom: 4em;
+
+        p {
+            &.header {
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: $clr-orange;
+                text-shadow: 0 0 1px $clr-black;
+            }
+
+            &.text {
+                font-size: 1.1rem;
+                font-family: 'Arvo', serif;
+            }
+        }
+    }
+
+    div.bg {
+        position: absolute;
+        height: 100vh;
+        width: 30%;
+        background: $clr-orange;
+        
+        &.one {
+            top: 0;
+            left: 25%;
+            translate: -25% 0;
+            transform: skew(-45deg);
+        }
+
+        &.two {
+            top: 100vh;
+            left: 0;
+            width: 21%;
+        }
+    }
+}
