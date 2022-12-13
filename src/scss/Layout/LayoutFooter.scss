@@ -1,5 +1,116 @@
 @import '../config';
 
 footer.layout-footer {
-    background: brown;
+    background: $clr-black;
+
+    li.header,
+    p.header {
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: 1.75rem;
+        margin-bottom: 3rem;
+    }
+
+    section.wrap {
+        @include Flex(sb);
+        padding: 8em 3em;
+        
+        section {
+            &.logo-section {
+                width: 20%;
+                
+                p.text {
+                    font-size: 1rem;
+                    margin-top: 2em;
+                    letter-spacing: 1px;
+                    color: $clr-grey;
+                    font-weight: 600;
+                }
+
+                section.logo {
+                    @include Flex(none, c);
+
+                    figure {
+                        margin-right: .25em;
+                        @include Rectangle(50px);
+
+                        img {
+                            border: 1px solid $clr-grey;
+                            border-radius: 50%;
+                            @include FullSize;
+                            object-fit: cover
+                        }
+                    }
+
+                    p {
+                        font-weight: 800;
+                        font-family: 'Arvo', serif;
+                        font-size: 1.25rem;
+                    }
+                }
+            }
+
+            &.links {
+                display: flex;
+                width: 20%;
+                @include Flex(sb, fe);
+
+                ul {
+                    list-style: none;
+
+                    li {
+                        &.margin {
+                            margin-top: 5rem;
+                        }
+
+                        &:not(.header) {
+                            @include NotMargin(.75);
+                            font-size: 1.1rem;
+                            color: $clr-grey;
+                            cursor: pointer;
+                            transition: .3s;
+
+                            &:hover {
+                                color: $clr-orange;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.footer-socials {
+                width: 35%;
+
+                p.text {
+                    font-weight: 500;
+                    color: $clr-grey;
+                    margin-bottom: 2em;
+                }
+
+                section.socials {
+                    display: flex;
+                    margin-top: 1em;
+
+                    span {
+                        margin-right: .75em;
+                        @include Rectangle(40px);
+                        cursor: pointer;
+                        transition: .3s;
+
+                        &:hover {
+                            color: $clr-orange;
+                            scale: 1.15;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    p.rights {
+        text-align: center;
+        background: #252525;
+        padding: 1em 0;
+        font-weight: 500;
+    }
 }
