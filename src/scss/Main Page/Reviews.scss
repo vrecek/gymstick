@@ -8,14 +8,19 @@ section.reviews {
     color: $clr-black;
     overflow: hidden;
 
+    section.reviews-container,
+    section.text {
+        @include Center(90%);
+    }
+
     section.reviews-container {
-        @include Flex(sa);
+        @include Flex(sb);
         flex-wrap: wrap;
         z-index: 2;
         position: relative;
 
         article.review {
-            width: 40%;
+            width: 45%;
             margin-bottom: 2em;
             padding: 1.5em;
             border-radius: .5em;

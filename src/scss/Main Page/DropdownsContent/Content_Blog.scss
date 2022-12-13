@@ -1,0 +1,74 @@
+@import '../../config';
+
+article.content-blog {
+    @include Flex(sb, none, c);
+    @include FullSize;
+
+    figure {
+        width: 100%;
+        aspect-ratio: 2.5;
+
+        img {
+            @include FullSize;
+            object-fit: cover;
+        }
+    }
+
+    section {
+        &.paragraphs {
+            p {
+                &.title {
+                    font-size: 2.75rem;
+                    font-weight: 700;
+                }
+
+                &.text {
+                    font-weight: 500;
+                    font-size: 1.1rem;
+                }
+            }
+        }
+
+        &.informations {
+            @include Flex(sb, c);
+
+            p.category {
+                color: $clr-grey;
+                font-weight: 600;
+            }
+
+            section.tags {
+                display: flex;
+
+                span {
+                    margin-right: .5em;
+                    padding: .5em;
+                    border-radius: .25em;
+                    background: $clr-orange;
+                    color: $clr-white;
+                    font-weight: 600;
+                    font-size: .95rem;
+                }
+            }
+        }
+    }
+
+    button {
+        padding: .75em 2em;
+        background: $clr-orange;
+        border-radius: .25em;
+        border: 0;
+        outline: 0;
+        width: max-content;
+        cursor: pointer;
+        background: $clr-blued;
+        transition: .3s;
+
+        label {
+            color: $clr-white;
+            font-weight: 500;
+        }
+
+        &:hover { background: royalblue; }
+    }
+}

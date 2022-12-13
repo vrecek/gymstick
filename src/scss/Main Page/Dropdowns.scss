@@ -1,0 +1,82 @@
+@import '../config';
+
+section.dropdowns {
+    @include Flex(sa, c);
+    height: 100vh;
+    background: $bgTransparent;
+    position: relative;
+
+    section.dropdown-container,
+    section.content {
+        position: relative;
+        z-index: 2;
+        height: 80%;
+    }
+
+    section.dropdown-container {
+        width: 45%;
+        background: $clr-white;
+        color: $clr-black;
+        padding: 1em;
+        @include Flex(sa, none, c);
+
+        section.option {
+            section.header {
+                @include Flex(sb, c);
+                cursor: pointer;
+                margin-bottom: .25em;
+
+                div {
+                    @include Flex(sb, c);
+                    width: 80%;
+                }
+
+                p {
+                    &.topic {
+                        background: $clr-orange;
+                        padding: .5em;
+                        color: $clr-white;
+                        font-weight: 700;
+                        border-radius: .5em;
+                        pointer-events: none;
+                    }
+
+                    &.header {
+                        font-weight: 600;
+                        font-size: 1.1rem;
+                    }
+                }
+
+                span {
+                    @include Rectangle(30px);
+                    transition: .3s;
+                }
+            }
+
+            section.expanded-menu {
+                width: 80%;
+                margin: 0 0 0 auto;
+                height: 0;
+                overflow: hidden;
+                display: none;
+                transition: .3s;
+            }
+        }
+    }
+
+    section.content {
+        width: 45%;
+        padding: 1em;
+        background: $clr-white;
+        color: $clr-black;
+    }
+
+    div.bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: $clr-orange;
+        width: 21%;
+        height: 100vh;
+    }
+}

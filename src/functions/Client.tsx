@@ -39,6 +39,14 @@ namespace TB {
 
 // DropDown types
 namespace DD {
+    export abstract class DropDownType {
+        public abstract expandMenu(hiddenList: HTMLElement, display?: DD.DisplayType): void 
+        public abstract shrinkMenu(hiddenList?: HTMLElement, display?: DD.DisplayType): void
+        public abstract rotateArrow(arrow: HTMLElement): void
+        public abstract switchActive(): void
+        public abstract get getActive(): boolean
+    }
+
     export type DisplayType = 'block' | 'flex'
 
     export type ReturnedHeight = {
@@ -286,7 +294,7 @@ export default class Client {
     }
 
 
-    public static DropDown = class {
+    public static DropDown = class extends DD.DropDownType {
         private active: boolean
         private activeList: HTMLElement | null
 
@@ -344,6 +352,8 @@ export default class Client {
 
 
         public constructor(transitionMsc: number) {
+            super()
+
             this.active = false
             this.activeList = null
             this.boxProps = null
@@ -768,5 +778,6 @@ export type {
     Aliases,
     CustomTypes,
     FETCH,
-    LOAD
+    LOAD,
+    DD
 }
