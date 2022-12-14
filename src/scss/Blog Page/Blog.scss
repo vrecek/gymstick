@@ -1,0 +1,138 @@
+@import '../config';
+
+main.blog-page {
+    min-height: 100vh;
+    margin-top: $navHeight;
+    background: $bgTransparent;
+    padding: 2em;
+
+    section.container {
+        margin-top: 3em;
+        @include Flex(sa);
+        flex-wrap: wrap;
+
+        article {
+            margin: .75em;
+            width: 45%;
+            aspect-ratio: 1.75;
+            padding: 1.25em;
+            border-radius: .25em;
+            color: $clr-black;
+            background: $clr-white;
+            margin-bottom: 2em;
+            position: relative;
+            overflow: hidden;
+            color: $clr-white;
+            text-shadow: 0 0 2px $clr-black;
+
+            section.tags {
+                position: absolute;
+                z-index: 2;
+                right: .75em;
+                top: .75em;
+                display: flex;
+
+                span {
+                    margin-left: .5em;
+                    background: $clr-blued;
+                    font-size: .9rem;
+                    font-weight: 500;
+                    padding: .5em;
+                    border-radius: .25em;
+                }
+            }
+
+            p.category {
+                position: absolute;
+                right: .75em;
+                bottom: .75em;
+                color: $clr-grey;
+                text-shadow: 0 0 2px $clr-black;
+                font-size: .9rem;
+                z-index: 2;
+            }
+
+            div.wrap {
+                position: relative;
+                z-index: 2;
+                @include Flex(fe, fs, c);
+                @include FullSize;
+
+                p {
+                    &.header {
+                        font-weight: 800;
+                        font-size: 2.25rem;
+                    }
+
+                    &.text {
+                        font-weight: 500;
+                        margin: .25em 0 .75em 0;
+                    }
+                }
+            }
+
+            button {
+                padding: .75em 2em;
+                outline: 0;
+                border: 0;
+                background: $clr-blued;
+                transition: .3s;
+                cursor: pointer;
+                border-radius: .25em;
+
+                label {
+                    color: $clr-white;
+                    font-weight: 500;
+                }
+
+                &:hover { background: royalblue; }
+            }
+
+            figure {
+                position: absolute;
+                left: 0;
+                top: 0;
+                @include FullSize;
+
+                img {
+                    @include FullSize;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    section.searchbar {
+        @include Flex(sb, c);
+
+        h1 {
+            font-size: 2.25rem;
+            text-shadow: 0 0 2px $clr-black;
+            font-weight: 800;
+        }
+
+        div {
+            position: relative;
+            width: 40%;
+
+            input {
+                width: 100%;
+                padding: .75em;
+                font-size: 1rem;
+                border-radius: .2em;
+                outline: 0;
+                border: 1px solid $clr-grey;
+                padding-right: 40px;
+            }
+
+            span {
+                position: absolute;
+                right: 8px;
+                top: 50%;
+                translate: 0 -50%;
+                @include Rectangle(30px);
+                color: $clr-black;
+            }
+        }
+    }
+}

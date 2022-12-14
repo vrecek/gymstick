@@ -10,7 +10,7 @@ const SHOP_PAGE = () => {
 
             <main className="shop-page">
 
-                <Searchbar />
+                <Searchbar>Shop</Searchbar>
 
                 <ProductsSection />
 
