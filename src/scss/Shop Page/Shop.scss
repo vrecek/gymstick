@@ -1,0 +1,120 @@
+@import '../config';
+
+main.shop-page {
+    margin-top: $navHeight;
+    min-height: 100vh;
+    padding: 2em;
+
+    section.products-section {
+        background: $bgTransparent;
+        margin-top: 2em;
+        padding: 1em;
+        border-radius: .25em;
+        @include Flex(sa);
+        flex-wrap: wrap;
+
+        div.card {
+            width: 19%;
+            border: 2px solid $clr-orange;
+            border-radius: .25em;
+            position: relative;
+            aspect-ratio: .75;
+            color: $clr-white;
+            margin: 1em;
+            @include Flex(fe, fs, c);
+            padding: .5em;
+    
+            p {
+                text-shadow: 0 0 3px $clr-black;
+                position: relative;
+                z-index: 2;
+    
+                &.name {
+                    font-weight: 700;
+                    border-left: 3px solid $clr-orange;
+                    padding-left: .5em;
+                    font-size: 1.15rem;
+                }
+    
+                &.price {
+                    font-weight: 800;
+                    margin: .25em 0;
+                    font-family: 'Arvo', serif;
+                    letter-spacing: 2px;
+                    font-size: 2.75rem;
+                    @include Flex(none, fs);
+    
+                    span {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+    
+            button {
+                padding: .75em 2em;
+                background: $clr-orange;
+                outline: 0;
+                border: 0;
+                border-radius: .25em;
+                cursor: pointer;
+                transition: .3s;
+                position: relative;
+                z-index: 2;
+
+                label {
+                    color: $clr-white;
+                    font-weight: 600;
+                }
+    
+                &:hover { background: orange }
+            }
+    
+            figure {
+                @include FullSize;
+                position: absolute;
+                left: 0;
+                top: 0;
+                // z-index: -1;
+                
+                img {
+                    @include FullSize;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    section.searchbar {
+        @include Flex(sb, c);
+
+        h1 {
+            font-size: 2.25rem;
+            text-shadow: 0 0 2px $clr-black;
+            font-weight: 800;
+        }
+
+        div {
+            position: relative;
+            width: 40%;
+
+            input {
+                width: 100%;
+                padding: .75em;
+                font-size: 1rem;
+                border-radius: .2em;
+                outline: 0;
+                border: 1px solid $clr-grey;
+                padding-right: 40px;
+            }
+
+            span {
+                position: absolute;
+                right: 8px;
+                top: 50%;
+                translate: 0 -50%;
+                @include Rectangle(30px);
+                color: $clr-black;
+            }
+        }
+    }
+}
