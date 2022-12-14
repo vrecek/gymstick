@@ -27,6 +27,19 @@ namespace CustomTypes {
 
 // TextBox types
 namespace TB {
+    export abstract class TextBox {
+        public abstract initializeBox(): this
+        public abstract changeStyles(styleObj: React.CSSProperties, type: TB.ElementType): void
+        public abstract setDefaultStyles(name: TB.DefaultStyles): void
+        public abstract appendTo(element: HTMLElement, removeAfterMs: number, appendFirst?: boolean): void
+        public abstract removePreviousBox(element: HTMLElement, removeClass?: string): this
+        public abstract removeBox(): void
+        public abstract resetStyles(type?: TB.ElementType): void
+        public abstract isAppended(element?: HTMLElement): boolean
+        public abstract set setMessage(str: string)
+        public abstract set setClass(str: string)
+    }
+
     export type ElementType = 'div' | 'p'
 
     export type ConstructorOptions = {
@@ -39,7 +52,7 @@ namespace TB {
 
 // DropDown types
 namespace DD {
-    export abstract class DropDownType {
+    export abstract class DropDown {
         public abstract expandMenu(hiddenList: HTMLElement, display?: DD.DisplayType): void 
         public abstract shrinkMenu(hiddenList?: HTMLElement, display?: DD.DisplayType): void
         public abstract rotateArrow(arrow: HTMLElement): void
@@ -63,6 +76,13 @@ namespace DD {
 
 // Loading types
 namespace LOAD {
+    export abstract class Loading {
+        public abstract defaultStyleCircle(circleStyles?: LOAD.CircleStyleType): void
+        public abstract defaultStyleDots(dotStyles?: LOAD.DotStyleType): void
+        public abstract append(element: HTMLElement, appendFirst?: boolean): void
+        public abstract remove(): void
+    }
+
     export type LoadingPosition = 'fixed' | 'containerWidth' | 'containerHeight'
 
     export type DefaultStyle = {
@@ -101,7 +121,7 @@ namespace FETCH {
 
 
 export default class Client {
-    public static TextBox = class {
+    public static TextBox = class extends TB.TextBox {
         private timeout: NodeJS.Timer | null
 
         private divStyles: React.CSSProperties
@@ -119,6 +139,8 @@ export default class Client {
             * @param options Optional - object { message: string, cname: string }
         */
         public constructor(options?: TB.ConstructorOptions) {
+            super()
+
             const {message, cname} = options ?? {}
 
             this.eDiv = null
@@ -294,7 +316,7 @@ export default class Client {
     }
 
 
-    public static DropDown = class extends DD.DropDownType {
+    public static DropDown = class extends DD.DropDown {
         private active: boolean
         private activeList: HTMLElement | null
 
@@ -446,7 +468,7 @@ export default class Client {
     }
 
 
-    public static Loading = class {
+    public static Loading = class extends LOAD.Loading {
         private className: string
 
         private div: HTMLDivElement
@@ -454,6 +476,8 @@ export default class Client {
 
 
         public constructor(className?: string) {
+            super()
+
             this.currentAppended = null
             this.className = className ?? 'loading-default-class'
             this.div = document.createElement('div')
@@ -778,6 +802,7 @@ export type {
     Aliases,
     CustomTypes,
     FETCH,
+    TB,
     LOAD,
     DD
 }

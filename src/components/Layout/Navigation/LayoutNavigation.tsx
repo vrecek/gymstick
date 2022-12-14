@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import '../../../css/LayoutNavigation.css'
 import { Aliases } from '../../../functions/Client'
 import { LinksList } from '../../../interfaces/CommonInterfaces'
@@ -7,7 +7,10 @@ import Logo from './Logo'
 import Menu from './Menu/Menu'
 import ToggleMenu from './Menu/ToggleMenu'
 
-const LayoutNavigation = () => {
+const LayoutNavigation = ({darkNav}: {darkNav?: boolean}) => {
+    window.scrollTo(0, 0)
+
+    
     const navRef = React.useRef<HTMLDivElement>(null)
     const list: LinksList[] = [
         { text: 'Homepage', url: '/' },
@@ -15,11 +18,18 @@ const LayoutNavigation = () => {
         { text: 'Contact', url: '/contact' }
     ]
 
+    const darkStyle: React.CSSProperties = darkNav
+        ? {background: '#303030'}
+        : {}
+
+
     React.useEffect(() => {
         const t: Aliases.Possible<HTMLElement> = navRef?.current ?? null
         let scrolled: boolean = false
 
-        window.addEventListener('scroll', () => {
+        if(darkNav) return
+
+        window.onscroll = () => {
             if(!t) return
             
             if(!scrolled && window.scrollY > 400) {
@@ -32,12 +42,12 @@ const LayoutNavigation = () => {
 
                 scrolled = false
             }
-        })
+        }
     }, [])
 
 
     return (
-        <nav ref={navRef} className="layout-navigation">
+        <nav style={darkStyle} ref={navRef} className="layout-navigation">
 
             <Logo />
 

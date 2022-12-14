@@ -9,7 +9,7 @@ const OptionHeader = ({topic, header, ddIndex, allDds, setContent, contentValue}
         const t: HTMLElement = e.currentTarget as HTMLElement,
               menu: HTMLElement = t.parentElement!.children[1] as HTMLElement,
               arrow: HTMLElement = t.children[1].children[1] as HTMLElement,
-              dd: DD.DropDownType = allDds[ddIndex]
+              dd: DD.DropDown = allDds[ddIndex]
 
 
         for(let [i, x] of Object.entries(allDds)) {

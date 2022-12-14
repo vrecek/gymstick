@@ -1,0 +1,162 @@
+@import '../config';
+
+main.contact-page {
+    min-height: 100vh;
+    padding-top: $navHeight;
+    background: $bgTransparent;
+    color: $clr-black;
+
+    h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        padding: 2em;
+    }
+
+    section {
+        &.contact-form {
+            @include Flex(sa);
+            margin-top: 10em;
+            padding: 0 1em;
+
+            article.form-text {
+                width: 30%;
+
+                p.header {
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                }
+
+                p.text {
+
+                }
+
+                section {
+                    margin-top: 3em;
+                    @include Flex(sb, c);
+
+                    p {
+                        font-weight: 500;
+                    }
+
+                    span {
+                        @include Rectangle(30px);
+                        cursor: pointer;
+                        transition: .5s;
+                    }
+                }
+            }
+
+            form {
+                padding: 1em;
+                width: 40%;
+                position: relative;
+                background: $clr-white;
+
+                div.result-box {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 100%;
+                    background: $clr-white;
+                    padding: .75em;
+                    text-align: center;
+
+                    p {
+                        width: max-content;
+                        padding-top: .25em;
+                        margin: 0 auto;
+                        font-weight: 500;
+                    }
+
+                    &.true p { border-top: 2px solid green; }
+                    &.false p { border-top: 2px solid red; }
+                }
+
+                input,
+                textarea {
+                    width: 100%;
+                    transition: .3s;
+                    padding: .75em;
+                    font-size: .95rem;
+                    border: 0;
+                    outline: 0;
+                    border-radius: .25em;
+                    border-left: 2px solid $clr-orange;
+                    background: darken($clr-white, 2%);
+                }
+
+                div {
+                    margin-bottom: 1em;
+
+                    label {
+                        display: block;
+                        font-weight: 600;
+                        margin-bottom: .25em;
+                        font-size: .9rem;
+                    }
+                }
+
+                button {
+                    padding: .75em 2em;
+                    background: $clr-orange;
+                    outline: 0;
+                    border: 0;
+                    cursor: pointer;
+                    transition: .5s;
+                    margin-top: 2em;
+                    border-radius: .25em;
+
+                    label {
+                        color: $clr-white;
+                        font-weight: 500;
+                    }
+
+                    &:hover { background: orangered; }
+                }
+
+                textarea {
+                    margin-top: 1em;
+                    resize: none;
+                    height: 250px;
+                }
+            }
+        }
+
+        &.socials-section {
+            padding: 1em;
+
+            section.socials {
+                @include Flex(sa);
+
+                span {
+                    @include Rectangle(90px);
+                    cursor: pointer;
+                    transition: .3s;
+
+                    &:hover { scale: 1.1; }
+                }
+            }
+
+            h2 {
+                text-align: center;
+                margin-bottom: 4em;
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+        }
+
+        &.location {
+            article.left-section {
+                section.details {
+                    color: $clr-white;
+                }
+
+                p {
+                    &.text {
+                        text-shadow: none;
+                    }
+                }
+            }
+        }
+    }
+}

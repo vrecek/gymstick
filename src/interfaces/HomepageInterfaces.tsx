@@ -25,7 +25,7 @@ export type DropdownHeader = ChangeContent & {
     header: string
     topic: string
     ddIndex: number
-    allDds: DD.DropDownType[]
+    allDds: DD.DropDown[]
     contentValue: DropdownContent
 }
 

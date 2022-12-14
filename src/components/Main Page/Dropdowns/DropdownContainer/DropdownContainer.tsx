@@ -4,7 +4,7 @@ import { ChangeContent, DropdownContent, DropdownOptionArray } from '../../../..
 import Option from './Option'
 
 const DropdownContainer = ({setContent}: ChangeContent) => {
-    const [allDds] = React.useState<DD.DropDownType[]>([...Array(3)].map(x => new Client.DropDown(300)))
+    const [allDds] = React.useState<DD.DropDown[]>([...Array(3)].map(x => new Client.DropDown(300)))
 
     const options: DropdownOptionArray[] = [
         {
