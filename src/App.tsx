@@ -7,6 +7,7 @@ import SHOP_PAGE from './components/Shop Page/SHOP_PAGE';
 import BLOG_PAGE from './components/Blog Page/BLOG_PAGE';
 import LayoutArrow from './components/Layout/LayoutArrow';
 import ARTICLE_PAGE from './components/Article Page/ARTICLE_PAGE';
+import PRODUCT_PAGE from './components/Product Page/PRODUCT_PAGE';
 
 
 function App() {
@@ -19,7 +20,9 @@ function App() {
 
                     <Route path='/' element={<MAIN_PAGE />} />
                     <Route path='/contact' element={<CONTACT_PAGE />} />
+
                     <Route path='/shop' element={<SHOP_PAGE />} />
+                    <Route path='/product/:id' element={<PRODUCT_PAGE />} />
 
                     <Route path='/blog' element={<BLOG_PAGE />} />
                     <Route path='/article/:id' element={<ARTICLE_PAGE />} />

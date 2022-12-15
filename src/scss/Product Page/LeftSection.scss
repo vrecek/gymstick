@@ -1,0 +1,114 @@
+@import '../config';
+
+section.left-section {
+    background: $clr-white;
+    width: 60%;
+    padding: 3em;
+
+    section {
+        &.product-info {
+            margin-top: 4em;
+
+            section.container {
+                @include Flex(sb);
+                flex-wrap: wrap;
+
+                div {
+                    width: 45%;
+                    display: flex;
+                    margin-bottom: .5em;
+
+                    p {
+                        &.info {
+                            font-weight: 700;
+                            margin-right: .5em;
+                        }
+
+                        &.value {
+                            color: #505050;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.additional-images {
+            margin-top: 4em;
+    
+            section.container {
+                @include Flex(sb);
+    
+                figure {
+                    width: 20%;
+                    aspect-ratio: 1;
+    
+                    img {
+                        @include FullSize;
+                        border-radius: .25em;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+
+        &.description {
+            p.text {
+                font-weight: 500;
+                color: #505050;
+            }
+        }
+
+        &.price-misc {
+            margin: 3em 0 4em 0;
+            @include Flex(sb, fs);
+    
+            h2 {
+                font-size: 2.25rem;
+                @include Flex(fs);
+                font-weight: 800;
+                letter-spacing: 1px;
+        
+                span {
+                    font-size: 1.25rem;
+                    font-weight: 600;
+                }
+            }
+    
+            div {
+                @include Flex(none, c);
+                @include NotMargin(1);
+    
+                span {
+                    @include Rectangle(40px);
+                    margin-right: .25em;
+                }
+    
+                font-size: .9rem;
+                font-weight: 500;
+    
+                &.available span {
+                    color: green;
+                }
+            }
+        }
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: rgb(212, 106, 7);
+    }
+
+
+    figure.main {
+        width: 60%;
+        aspect-ratio: 1;
+        margin: 0 auto;
+        margin-bottom: 2em;
+
+        img {
+            @include FullSize;
+            object-fit: cover;
+        }
+    }
+}

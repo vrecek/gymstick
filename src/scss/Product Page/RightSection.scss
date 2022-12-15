@@ -1,0 +1,61 @@
+@import '../config';
+
+section.right-section {
+    background: $clr-white;
+    width: 30%;
+    padding: 2em;
+    height: max-content;
+    position: sticky;
+    top: 100px;
+
+    section.total {
+        margin-top: 2em;
+
+        h3 {
+            font-weight: 700;
+            font-size: 1.75rem;
+        }
+    }
+
+    section.quantity {
+        section {
+            @include Flex(c, c);
+
+            div.value {
+                width: 15%;
+                aspect-ratio: 1;
+                @include Flex(c, c);
+                font-size: 1.25rem;
+                border-radius: .25em;
+                border: 2px solid $clr-grey;
+                margin: 0 .25em;
+            }
+
+            span {
+                @include Rectangle(20px);
+                cursor: pointer;
+            }
+        }
+    }
+
+    button {
+        margin-top: 3em;
+        width: 100%;
+        background: orangered;
+        border-radius: .25em;
+        outline: 0;
+        border: 0;
+        cursor: pointer;
+        transition: .3s;
+        padding: 1em 0;
+
+        label {
+            color: $clr-white;
+            font-weight: 500;
+        }
+
+        &:hover {
+            background: $clr-orange;
+        }
+    }
+}
