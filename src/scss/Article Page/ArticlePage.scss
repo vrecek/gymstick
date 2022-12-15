@@ -1,0 +1,96 @@
+@import '../config';
+
+main.article-page {
+    width: 90%;
+    margin: calc($navHeight + 2em) auto 2em auto;
+    background: $clr-white;
+    min-height: 100vh;
+    color: $clr-black;
+    padding: .5em;
+
+    article.main {
+        padding: 2em 0;
+        border-bottom: 3px solid $clr-grey;
+        @include Center(75%);
+        margin-bottom: 3em;
+
+        section.tags-category {
+            @include Flex(sb, c);
+            margin: .25em 0 3em 0;
+
+            p {
+                font-weight: 500;
+                font-size: 1rem;
+            }
+
+            section.tags {
+                display: flex;
+
+                span {
+                    background: $clr-orange;
+                    border-radius: .25em;
+                    margin-right: .25em;
+                    padding: .5em;
+                    color: $clr-white;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        p.path {
+            @include Flex(none, c);
+            margin-bottom: .25em;
+            font-size: .8rem;
+
+            &,
+            span {
+                font-weight: 500;
+            }
+
+            span {
+                margin: 0 .5em;
+                &:first-child { margin-left: 0; }
+                cursor: pointer;
+                transition: .5s;
+
+                &:hover {
+                    color: $clr-orange;
+                }
+
+                &.disabled {
+                    pointer-events: none;
+                    color: royalblue;
+                }
+            }
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1em;
+        }
+
+        p.text {
+            line-height: 2em;
+            font-size: 1.1rem;
+            font-weight: 500;
+
+            span.header {
+                font-size: 1.5rem;
+                font-weight: 700;
+                display: block;
+                margin: 1.5em 0 .5em 0;
+            }
+        }
+
+        figure {
+            width: 100%;
+            aspect-ratio: 2;
+
+            img {
+                @include FullSize;
+                object-fit: cover;
+            }
+        }
+    }
+}

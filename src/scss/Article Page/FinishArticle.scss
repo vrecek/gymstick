@@ -1,0 +1,151 @@
+@import '../config';
+
+section.finish-article {
+    margin: 4em auto;
+    width: 90%;
+    
+    p.finish-header {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 3em;
+    }
+
+    section {
+        &.comments {
+            margin-bottom: 4em;
+
+            section.toggle-comments {
+                @include Flex(sb, c);
+                cursor: pointer;
+                padding-bottom: 4em;
+
+                p {
+                    margin-bottom: 0;
+                }
+
+                span {
+                    @include Rectangle(40px);
+                    rotate: 180deg;
+                    transition: .5s;
+                }
+            }
+
+            section.container {
+                transition: .5s;
+
+                article.comment {
+                    position: relative;
+                    @include Flex(sb);
+                    @include NotMargin(4);
+
+                    figure {
+                        width: 8%;
+                        aspect-ratio: 1;
+
+                        img {
+                            @include FullSize;
+                            object-fit: cover;
+                        }
+                    }
+
+                    section.text {
+                        width: 90%;
+                        p {
+                            &.author {
+                                font-weight: 700;
+                                margin-bottom: 1em;
+                            }
+
+                            &.text {
+                                font-size: .95rem;
+                            }
+                        }
+                    }
+
+                    p.date {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        font-weight: 500;
+
+                    }
+                }
+            }
+        }
+
+        &.misc {
+            @include Flex(c, c);
+            margin-bottom: 4em;
+    
+            div.info {
+                margin: 0 1.5em;
+    
+                span {
+                    @include Rectangle(60px);
+                }
+    
+                p {
+                    text-align: center;
+                    margin-top: .25em;
+                    font-weight: 600;
+                    font-size: 1.1rem;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+
+        &.related-articles {
+            article.related-article {
+                @include NotMargin(3);
+                display: flex;
+                cursor: pointer;
+    
+                section.text {
+                    flex-grow: 1;
+                    position: relative;
+                    @include Flex(sb, none, c);
+    
+                    div.title-desc {
+                        p {
+                            &.header {
+                                font-size: 1.75rem;
+                                font-weight: 600;
+                                margin-bottom: .25em;
+                                width: 50%;
+                            }
+    
+                            &.text {
+                                width: 70%;
+                                color: #505050;
+                            }
+                        }
+                    }
+    
+                    p.date {
+                        font-size: .9rem;
+                        font-weight: 600;
+                    }
+    
+                    p.category {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        font-style: italic;
+                        font-weight: 500;
+                    }
+                }
+    
+                figure {
+                    width: 20%;
+                    aspect-ratio: 1.75;
+                    margin-right: 1em;
+    
+                    img {
+                        @include FullSize;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+}

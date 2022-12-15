@@ -38,4 +38,32 @@ body {
     }
 
     svg { @include FullSize; pointer-events: none; }
+
+    span.layout-arrow {
+        position: fixed;
+        z-index: 8;
+        right: 6px;
+        bottom: 6px;
+        @include Rectangle(30px);
+        @include Flex(c, c);
+        background: $clr-blued;
+        cursor: pointer;
+        transition: .5s;
+        pointer-events: none;
+        opacity: 0;
+        border-radius: .2em;
+
+        svg {
+            @include FullSize(80%);
+            transition: .5s;
+        }
+
+        &:hover {
+            background: royalblue;
+
+            svg {
+                rotate: 360deg;
+            }
+        }
+    }
 }
