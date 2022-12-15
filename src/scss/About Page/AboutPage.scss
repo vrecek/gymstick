@@ -1,0 +1,102 @@
+@import '../config';
+
+main.about-page {
+    section.details {
+        @include Flex(sa, c);
+        padding: .5em;
+        margin: 2em 0;
+
+        &.reverse { 
+            flex-direction: row-reverse; 
+        }
+
+        article.text-article {
+            width: 40%;
+
+            div.mark {
+                @include Flex(none, c);
+                margin-bottom: 2em;
+
+                span {
+                    margin-right: .5em;
+                    border-radius: 50%;
+                    font-weight: 800;
+                    @include Rectangle(40px);
+                    background: $clr-orange;
+                    @include Flex(c, c);
+                    font-size: 1.5rem;
+                }
+
+                p {
+                    font-weight: 700;
+                    text-shadow: 0 0 2px $clr-black;
+                    font-size: 1.25rem;
+                }
+            }
+
+            p {
+                text-shadow: 0 0 2px $clr-black;
+
+                &.header {
+                    font-weight: 700;
+                    font-size: 2.5rem;
+                    margin-bottom: 1em;
+                }
+
+                &.text {
+                    font-weight: 500;
+                    border-left: 2px solid $clr-orange;
+                    padding-left: .5em;
+                }
+            }
+        }
+
+        figure {
+            width: 35%;
+            aspect-ratio: 1;
+
+            img {
+                @include FullSize;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    section.about-text {
+        height: 100vh;
+        @include Flex(c, c);
+
+        section.container {
+            background: $clr-black;
+            width: 100%;
+            padding: .5em;
+            height: 70vh;
+            @include Flex(sa, c);
+
+            article {
+                width: 45%;
+
+                h2 {
+                    font-weight: 800;
+                    font-size: 3rem;
+                }
+
+                p {
+                    font-weight: 500;
+                    margin-top: .5em;
+                }
+            }
+
+            figure {
+                height: 85vh;
+                aspect-ratio: .75;
+
+                img {
+                    @include FullSize;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}

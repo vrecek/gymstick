@@ -8,6 +8,7 @@ import BLOG_PAGE from './components/Blog Page/BLOG_PAGE';
 import LayoutArrow from './components/Layout/LayoutArrow';
 import ARTICLE_PAGE from './components/Article Page/ARTICLE_PAGE';
 import PRODUCT_PAGE from './components/Product Page/PRODUCT_PAGE';
+import ABOUT_PAGE from './components/About Page/ABOUT_PAGE';
 
 
 function App() {
@@ -19,7 +20,9 @@ function App() {
                 <Routes>
 
                     <Route path='/' element={<MAIN_PAGE />} />
+
                     <Route path='/contact' element={<CONTACT_PAGE />} />
+                    <Route path='/about' element={<ABOUT_PAGE />} />
 
                     <Route path='/shop' element={<SHOP_PAGE />} />
                     <Route path='/product/:id' element={<PRODUCT_PAGE />} />

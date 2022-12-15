@@ -1,0 +1,48 @@
+@import '../config';
+
+header.about-header {
+    position: relative;
+    height: calc(100vh - $navHeight);
+    margin-top: $navHeight;
+    @include Flex(c, c);
+
+    article {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+
+        p {
+            text-shadow: 0 0 2px $clr-black;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        div.arrows {
+            margin-top: 3em;
+            @include Flex(c, c);
+
+            span {
+                @include Rectangle(40px);
+                margin: 0 .5em;
+            }
+        }
+
+        h1 {
+            font-size: 5rem;
+            font-weight: 800;
+            text-shadow: 0 0 2px $clr-black;
+        }
+    }
+
+    figure {
+        position: absolute;
+        left: 0;
+        top: 0;
+        @include FullSize;
+
+        img {
+            object-fit: cover;
+            @include FullSize;
+        }
+    }
+}
