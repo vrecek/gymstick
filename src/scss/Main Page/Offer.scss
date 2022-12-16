@@ -1,0 +1,134 @@
+@import '../config';
+
+section.offer {
+    min-height: 100vh;
+    background: $bgTransparent;
+    position: relative;
+    padding: 2em 1em;
+    color: $clr-black;
+    @include Flex(sa, c, c);
+
+    section.entry-text {
+        @include Layer;
+        text-align: center;
+        width: 100%;
+
+        p {
+            &.header {
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: $clr-orange;
+                text-shadow: 0 0 1px $clr-black;
+            }
+
+            &.text {
+                font-size: 1.1rem;
+                font-family: 'Arvo', serif;
+                width: 50%;
+                margin: 0 auto;
+                text-shadow: 0 0 1px $clr-white;
+            }
+        }
+    }
+
+    section.container {
+        @include Flex(sa);
+        width: 100%;
+        @include Layer;
+        
+
+        article.card {
+            width: 25%;
+            border-radius: .5em;
+            background: rgb(240, 240, 240);
+            padding: 2em;
+            @include Flex(sb, none, c);
+
+            p.type {
+                font-weight: 500;
+                font-size: 1.25rem;
+
+                &.blue { color: $clr-blued }
+                &.green { color: rgb(15, 155, 15) }
+                &.red { color: $clr-red }
+            }
+
+            section.pricing {
+                @include Flex(fs);
+                margin: 1.5em 0;
+
+                p {
+                    &.price {
+                        font-size: 2rem;
+                        font-weight: 800;
+                    }
+
+                    &.per {
+                        margin-left: .5em;
+                    }
+                }
+            }
+
+            ul.list {
+                list-style: none;
+
+                li {
+                    @include Flex(none, c);
+                    @include NotMargin(.75);
+
+                    span {
+                        @include Rectangle(30px);
+                        margin-right: .5em;
+                    }
+
+                    p {
+                        font-weight: 500;
+                    }
+
+                    &.true span {
+                        color: green;
+                    }
+
+                    &.false span {
+                        color: red;
+                    }
+                }
+            }
+
+            p.desc {
+                margin: 1.5em 0;
+                opacity: .8;
+            }
+
+            button {
+                width: 100%;
+                padding: 1em 0;
+                background: $clr-blued;
+                border-radius: .25em;
+                outline: 0;
+                border: 0;
+                cursor: pointer;
+                transition: .3s;
+                margin-top: 3em;
+
+                label {
+                    color: $clr-white;
+                    font-weight: 500;
+                }
+
+                &:hover { background: royalblue; }
+            }
+        }
+    }
+
+    div.bg {
+        position: absolute;
+        top: 0;
+        background: $clr-orange;
+        width: 30%;
+        height: 100vh;
+        left: 25%;
+        translate: -25% 0;
+        transform: skew(45deg);
+    }
+}

@@ -42,6 +42,11 @@ $bgTransparent: rgba(245, 245, 245, .7);
    max-width: none;
 }
 
+@mixin Layer($zIndex: 2, $pos: relative) {
+   position: $pos;
+   z-index: $zIndex;
+}
+
 @mixin NotMargin($marginBottomEM: 0, $marginTopEM: 0, $notWho: last-child) {
    &:not(:#{$notWho}) {
       margin-bottom: #{$marginBottomEM}em;

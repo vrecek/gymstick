@@ -5,6 +5,7 @@ import Dropdowns from './Dropdowns/Dropdowns'
 import Header from './Header/Header'
 import Introduction from './Introduction/Introduction'
 import Location from './Location/Location'
+import Offer from './Offer/Offer'
 import Reviews from './Reviews/Reviews'
 import Slider from './Slider/Slider'
 import Tiles from './Tiles/Tiles'
@@ -22,10 +23,12 @@ const MAIN_PAGE = () => {
                 <Tiles />
 
                 <Slider />
+                
+                <Dropdowns />
+
+                <Offer />
 
                 <Reviews />
-
-                <Dropdowns />
 
                 <Location />
 

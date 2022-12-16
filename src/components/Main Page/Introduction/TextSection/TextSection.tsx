@@ -2,6 +2,8 @@ import React from 'react'
 import Button from '../../../Common/Button'
 import HeaderIcon from './HeaderIcon'
 import IntroductionTextContainer from './IntroductionTextContainer'
+import {scroller} from 'react-scroll'
+import { scrollOptions } from '../../../../functions/scrollOptions'
 
 const TextSection = () => {
     return (
@@ -11,7 +13,7 @@ const TextSection = () => {
 
             <IntroductionTextContainer />
 
-            <Button text='See our offer' />
+            <Button action={() => scroller.scrollTo('offer', scrollOptions)} text='See our offer' />
 
         </article>
     )

@@ -10,6 +10,7 @@ const Menu = () => {
         { text: 'Homepage', url: '/', cname: 'home' },
         { text: 'Offer', url: '/offer' },
         { text: 'Blog', url: '/blog' },
+        { text: 'Shop', url: '/shop' },
         { text: 'About', url: '/about' },
         { text: 'Contact', url: '/contact' }
     ]

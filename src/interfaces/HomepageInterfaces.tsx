@@ -39,3 +39,24 @@ export enum DropdownContent {
 export type ChangeContent = {
     setContent: (value: DropdownContent) => void
 }
+
+export type CardOptions = {
+    type: CardType
+    desc: string
+    price: number
+    list: ListBools
+}
+
+export type CardLiElement = {
+    isActive: boolean
+    text: string
+}
+
+export enum CardType {
+    POPULAR = 'Popular,blue',
+    BEGINNER = 'Beginner,green',
+    ADVANCED = 'Advanced,red'
+}
+
+export type ListDescs = [string, string, string, string, string, string]
+export type ListBools = [boolean, boolean, boolean, boolean, boolean, boolean]

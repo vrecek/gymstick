@@ -13,7 +13,7 @@ const OneTile = ({btnFunc, btnText, text, header, icon}: TileDetails) => {
 
             <p className="text">{text}</p>
 
-            <Button text={btnText} />
+            <Button action={btnFunc} text={btnText} />
 
         </article>
     )

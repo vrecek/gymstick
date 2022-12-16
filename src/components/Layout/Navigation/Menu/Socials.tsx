@@ -9,7 +9,7 @@ const Socials = () => {
         {text: <FaGithubSquare />, url: 'https://github.com/vrecek'},    
         {text: <BsLinkedin />, url: 'https://github.com/vrecek'},    
         {text: <FaInstagramSquare />, url: 'https://github.com/vrecek'},    
-        {text: <BsCodeSlash />, url: 'https://github.com/vrecek'}    
+        {text: <BsCodeSlash />, url: 'https://github.com/vrecek/gymstick'}    
     ]
 
 

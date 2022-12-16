@@ -73,10 +73,12 @@ section.dropdowns {
 
     div.bg {
         position: absolute;
-        left: 0;
         top: 0;
         background: $clr-orange;
-        width: 21%;
+        width: 30%;
         height: 100vh;
+        left: 25%;
+        translate: -25% 0;
+        transform: skew(-45deg);
     }
 }

@@ -6,28 +6,33 @@ import {AiOutlineQuestionCircle} from 'react-icons/ai'
 import { FaMoneyBillAlt } from 'react-icons/fa'
 import '../../../css/Tiles.css'
 import TextHeaderWrap from './TextHeaderWrap'
+import { NavigateFunction, useNavigate } from 'react-router-dom'
+import {scroller} from 'react-scroll'
+import { scrollOptions } from '../../../functions/scrollOptions'
 
 const Tiles = () => {
+    const n: NavigateFunction = useNavigate()
+
     const tiles: TileDetails[] = [
         { 
             icon: <GiWeightLiftingUp />, 
-            header: 'Lorem ipsum', 
+            header: 'Gym pass', 
             text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita, accusantium illo, vero laudantium, quo asperiores sapiente rem deserunt', 
-            btnText: 'Explore', btnFunc: ()=>{} 
+            btnText: 'Explore', btnFunc: () => scroller.scrollTo('offer', scrollOptions) 
         },
 
         { 
             icon: <AiOutlineQuestionCircle />, 
-            header: 'Lorem ipsum', 
+            header: 'Contact', 
             text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita, accusantium illo, vero laudantium, quo asperiores sapiente rem deserunt', 
-            btnText: 'Explore', btnFunc: ()=>{} 
+            btnText: 'Explore', btnFunc: () => n('/contact') 
         },
 
         { 
             icon: <FaMoneyBillAlt />, 
-            header: 'Lorem ipsum', 
+            header: 'Products', 
             text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita, accusantium illo, vero laudantium, quo asperiores sapiente rem deserunt', 
-            btnText: 'Explore', btnFunc: ()=>{} 
+            btnText: 'Explore', btnFunc: () => n('/shop')  
         }
     ]
 
