@@ -36,16 +36,24 @@ section.left-section {
             margin-top: 4em;
     
             section.container {
-                @include Flex(sb);
+                @include Flex(c);
     
                 figure {
                     width: 20%;
                     aspect-ratio: 1;
+                    margin: 0 .5em;
+                    overflow: hidden;
+                    border-radius: .25em;
+                    @include Flex(c, c);
+                    cursor: pointer;
+
+                    &.active {
+                        pointer-events: none;
+                        border: 2px solid $clr-orange;
+                    }
     
                     img {
-                        @include FullSize;
-                        border-radius: .25em;
-                        object-fit: cover;
+                        height: 100%;
                     }
                 }
             }
@@ -89,6 +97,10 @@ section.left-section {
                 &.available span {
                     color: green;
                 }
+
+                &.notavailable span {
+                    color: $clr-red;
+                }
             }
         }
     }
@@ -101,14 +113,15 @@ section.left-section {
 
 
     figure.main {
-        width: 60%;
-        aspect-ratio: 1;
+        width: 80%;
+        overflow: hidden;
+        @include Flex(c, c);
+        aspect-ratio: 1.4;
         margin: 0 auto;
         margin-bottom: 2em;
 
         img {
-            @include FullSize;
-            object-fit: cover;
+            height: 100%;
         }
     }
 }

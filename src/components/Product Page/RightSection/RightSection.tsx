@@ -1,19 +1,20 @@
 import React from 'react'
 import '../../../css/RightSection.css'
+import { ProductPrice } from '../../../interfaces/ProductInterfaces'
 import Button from '../../Common/Button'
 import Quantity from './Quantity'
 import TotalPrice from './TotalPrice'
 
-const RightSection = () => {
-    const [quantity, setQuantity] = React.useState<number>(1)
+const RightSection = ({inStock, price}: ProductPrice) => {
+    const [quantity, setQuantity] = React.useState<number>(inStock > 0 ? 1 : 0)
 
 
     return (
         <section className="right-section">
 
-            <Quantity set={setQuantity} quantity={quantity} />
+            <Quantity inStock={inStock} set={setQuantity} quantity={quantity} />
 
-            <TotalPrice />
+            <TotalPrice quantity={quantity} price={price} />
 
             <Button text='Buy now' />
 

@@ -5,22 +5,25 @@ import Description from './Description'
 import PriceMisc from './PriceMisc/PriceMisc'
 import AdditionalImages from './AdditionalImages/AdditionalImages'
 import ProductInfo from './ProductInfo/ProductInfo'
+import { ProductItem } from '../../../interfaces/ProductInterfaces'
 
-const LeftSection = () => {
+const LeftSection = ({product}: ProductItem) => {
+    const {image, name, price, description, informations, inStock, additionalImgs} = product
+
     return (
         <section className="left-section">
 
-            <FigureImage cname='main' source='http://localhost:3000/static/media/card.05169fcecf387b7b3d43.jpg' altTxt='Product' />
+            <FigureImage cname='main' source={image} altTxt='Product' />
 
-            <h1>Aliquam explicabo iste corporis.</h1>
+            <h1>{name}</h1>
             
-            <PriceMisc />
+            <PriceMisc price={price} inStock={inStock} />
 
-            <Description />
+            <Description>{description}</Description>
 
-            <AdditionalImages />
+            <AdditionalImages imgs={[image, ...additionalImgs]} />
 
-            <ProductInfo />
+            <ProductInfo informations={informations} />
 
         </section>
     )

@@ -1,12 +1,13 @@
 import React from 'react'
+import { Aliases } from '../../../functions/Client'
 
-const Description = () => {
+const Description = ({children}: Aliases.Text) => {
     return (
         <section className="description">
 
             <p className="header">Description</p>
 
-            <p className="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore obcaecati, quaerat odio facilis, minima soluta praesentium placeat non itaque minus commodi saepe vel nesciunt eveniet aspernatur? Velit dolore recusandae deleniti.</p>
+            <p className="text">{children}</p>
 
         </section>
     )

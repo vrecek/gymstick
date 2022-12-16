@@ -1,7 +1,8 @@
 import React from 'react'
 import Info from './Info'
+import { ProductInformations } from '../../../../interfaces/ProductType'
 
-const ProductInfo = () => {
+const ProductInfo = ({informations}: {informations: ProductInformations[]}) => {
     return (
         <section className="product-info">
 
@@ -9,12 +10,15 @@ const ProductInfo = () => {
 
             <section className="container">
 
-                <Info />
-                <Info />
-                <Info />
-                <Info />
-                <Info />
-                <Info />
+                {
+                    informations.map((x, i) => (
+                        <Info
+                            key={i}
+                            header={x.header}
+                            value={x.value}
+                        />
+                    ))
+                }
 
             </section>
 

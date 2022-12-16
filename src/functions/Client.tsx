@@ -77,8 +77,8 @@ namespace DD {
 // Loading types
 namespace LOAD {
     export abstract class Loading {
-        public abstract defaultStyleCircle(circleStyles?: LOAD.CircleStyleType): void
-        public abstract defaultStyleDots(dotStyles?: LOAD.DotStyleType): void
+        public abstract defaultStyleCircle(circleStyles?: LOAD.CircleStyleType): this
+        public abstract defaultStyleDots(dotStyles?: LOAD.DotStyleType): this
         public abstract append(element: HTMLElement, appendFirst?: boolean): void
         public abstract remove(): void
     }
@@ -487,7 +487,7 @@ export default class Client {
             * @info Sets default loading styles 
             * @param circleStyles Optional - Object of optional circle styles
         */
-        public defaultStyleCircle(circleStyles?: LOAD.CircleStyleType): void {
+        public defaultStyleCircle(circleStyles?: LOAD.CircleStyleType): this {
             const appliedStyles: LOAD.CircleStyleType = { 
                 backgroundClr: circleStyles?.backgroundClr ?? 'rgba(30, 30, 30, .9)',
                 clr1: circleStyles?.clr1 ?? 'royalblue',
@@ -575,13 +575,15 @@ export default class Client {
 
             span1.appendChild(span2)
             this.div.appendChild(span1)
+
+            return this
         }
 
         /**
             * @info Sets default loading styles 
             * @param dotStyles Optional - Object of optional dot styles
         */
-        public defaultStyleDots(dotStyles?: LOAD.DotStyleType): void {
+        public defaultStyleDots(dotStyles?: LOAD.DotStyleType): this {
             const spans: HTMLElement[] = [...Array(3)].map(x => document.createElement('span'))
             const cont: HTMLElement = document.createElement('section')
 
@@ -641,6 +643,8 @@ export default class Client {
             }
 
             this.div.appendChild(cont)
+
+            return this
         }
 
         /**

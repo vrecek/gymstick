@@ -3,12 +3,12 @@ import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 import { QuantitySection } from '../../../interfaces/ProductInterfaces'
 import Icon from '../../Common/Icon'
 
-const Quantity = ({quantity, set}: QuantitySection) => {
+const Quantity = ({quantity, set, inStock}: QuantitySection) => {
     const changeQuantity = (type: 'minus' | 'plus'): void => {
         const isMinus: boolean = type === 'minus'
 
         if(isMinus && quantity <= 1) return
-        if(!isMinus && quantity >= 10) return
+        if(!isMinus && (quantity >= 10 || quantity >= inStock)) return
 
         set(
             curr => isMinus

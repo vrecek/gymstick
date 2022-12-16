@@ -1,17 +1,17 @@
 import React from 'react'
-import Button from '../../../../Common/Button'
 import FigureImage from '../../../../Common/FigureImage'
-import card from '../../../../../images/card.jpg'
+import { Link } from 'react-router-dom'
+import { ProductCard } from '../../../../../functions/ProductFunctions'
 
-const OneCard = () => {
+const OneCard = ({id, name, price, image}: ProductCard) => {
     return (
         <div className="card">
 
-            <FigureImage source={card} />
+            <FigureImage source={image} />
 
-            <p className="name">Conqesatur elit</p>
-            <p className="price">999 <span>$</span></p>
-            <Button text='View' />
+            <p className="name">{name}</p>
+            <p className="price">{price} <span>$</span></p>
+            <Link to={`/product/${id}`}>View</Link>
 
         </div>
     )

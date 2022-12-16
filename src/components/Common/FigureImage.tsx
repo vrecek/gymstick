@@ -4,11 +4,17 @@ type ImageOptions = {
     source: string
     altTxt?: string
     cname?: string
+    action?: (e: React.MouseEvent, src: string) => void
 } 
 
-const FigureImage = ({cname, source, altTxt}: ImageOptions) => {
+const FigureImage = ({cname, source, altTxt, action}: ImageOptions) => {
+    const actionFunc = action
+        ? (e: React.MouseEvent) => action(e, source)
+        : () => {}
+
+
     return (
-        <figure className={cname ?? ''}>
+        <figure onClick={actionFunc} className={cname ?? ''}>
 
             <img src={source} alt={altTxt ?? 'Image'} loading='lazy' />
 

@@ -1,17 +1,23 @@
 import React from 'react'
 import '../../../../../css/Content_Card.css'
-import FigureImage from '../../../../Common/FigureImage'
-import card from '../../../../../images/card.jpg'
-import Button from '../../../../Common/Button'
+import Product from '../../../../../functions/ProductFunctions'
 import OneCard from './OneCard'
 
 const Content_Card = () => {
+    const {name, id, price, image} = Product.getCard()
+
+
     return (
         <article className="content-card">
 
             <div className="header">Latest</div>
 
-            <OneCard />
+            <OneCard 
+                name={name}
+                id={id}
+                price={price}
+                image={image}
+            />
 
         </article>
     )

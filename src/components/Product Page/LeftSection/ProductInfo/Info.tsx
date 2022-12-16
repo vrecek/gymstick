@@ -1,11 +1,12 @@
 import React from 'react'
+import { ProductInformations } from '../../../../interfaces/ProductType'
 
-const Info = () => {
+const Info = ({header, value}: ProductInformations) => {
     return (
         <div className="info">
 
-            <p className="info">Loremis: </p>
-            <p className="value">Conqestur elit 44 sadasdas asdsdasd asdasd dsdsd</p>
+            <p className="info">{header}: </p>
+            <p className="value">{value}</p>
 
         </div>
     )
