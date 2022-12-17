@@ -1,21 +1,21 @@
 import React from 'react'
+import { RelatedType } from '../../../../interfaces/ArticleInterfaces'
 import FigureImage from '../../../Common/FigureImage'
 import Category from '../../../Main Page/Dropdowns/Content/Content_Blog/Category'
-import TitleDescription from './TitleDescription'
 
-const RelatedArticle = () => {
+const RelatedArticle = ({image, category, title, posted}: RelatedType) => {
     return (
         <article className="related-article">
 
-            <FigureImage source='http://localhost:3000/static/media/blog1.d786ca36230715e84705.jpg' altTxt='Article' />
+            <FigureImage source={image} altTxt='Article' />
 
             <section className="text">
 
-                <TitleDescription />
+                <p className="header">{title}</p>
 
-                <p className="date">Today</p>
+                <p className="date">{posted}</p>
 
-                <Category>Category</Category>
+                <Category>{category}</Category>
 
             </section>
 

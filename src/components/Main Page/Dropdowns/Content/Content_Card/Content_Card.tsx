@@ -4,7 +4,7 @@ import Product from '../../../../../functions/ProductFunctions'
 import OneCard from './OneCard'
 
 const Content_Card = () => {
-    const {name, id, price, image} = Product.getCard()
+    const {name, id, price, image} = new Product().getCard()
 
 
     return (

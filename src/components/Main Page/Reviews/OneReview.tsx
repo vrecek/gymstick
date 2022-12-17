@@ -1,15 +1,16 @@
 import React from 'react'
+import { Review } from '../../../interfaces/HomepageInterfaces'
 import Quote from './Quote'
 import ReviewSocials from './ReviewSocials'
 import UserInfo from './UserInfo'
 
-const OneReview = () => {
+const OneReview = ({name, avatar, text}: Review) => {
     return (
         <article className="review">
 
-            <UserInfo />
+            <UserInfo name={name} avatar={avatar} />
 
-            <Quote />
+            <Quote>{text}</Quote>
 
             <ReviewSocials />
 

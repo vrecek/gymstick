@@ -6,9 +6,9 @@ const ReviewSocials = () => {
     return (
         <section className="review-socials">
 
-            <Icon><FaFacebookSquare /></Icon>
-            <Icon><FaInstagramSquare /></Icon>
-            <Icon><FaGithubSquare /></Icon>
+            <Icon action={() => window.open('https://github.com/vrecek', '_blank')}><FaFacebookSquare /></Icon>
+            <Icon action={() => window.open('https://github.com/vrecek', '_blank')}><FaInstagramSquare /></Icon>
+            <Icon action={() => window.open('https://github.com/vrecek', '_blank')}><FaGithubSquare /></Icon>
 
         </section>
     )

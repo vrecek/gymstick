@@ -1,11 +1,12 @@
 import React from 'react'
+import { CommentTextDetails } from '../../../../interfaces/ArticleType'
 
-const CommentText = () => {
+const CommentText = ({text, author}: CommentTextDetails) => {
     return (
         <section className="text">
 
-            <p className="author">Lorem Ipsum</p>
-            <p className="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis debitis animi sequi repudiandae corporis ullam repellendus impedit eius maiores? Itaque optio tempora vitae nisi magnam dolorum quasi ad eveniet. Corporis.</p>
+            <p className="author">{author}</p>
+            <p className="text">{text}</p>
 
         </section>
     )

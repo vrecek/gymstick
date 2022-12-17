@@ -11,6 +11,13 @@ import Slider from './Slider/Slider'
 import Tiles from './Tiles/Tiles'
 
 const MAIN_PAGE = () => {
+    /*
+        react in vieewport / observer
+
+        lorem ipsum headers
+
+        responsive
+    */
     return (
         <LayoutWrap>
 

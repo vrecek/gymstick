@@ -1,12 +1,16 @@
 import React from 'react'
 
-const Tags = () => {
+const Tags = ({tags}: {tags: string[]}) => {
     return (
         <section className="tags">
 
-            <span>Lorem</span>
-            <span>Lorem</span>
-            <span>Lorem</span>
+            {
+                tags.map((x, i) => (
+                    <span key={i}>
+                        {x}
+                    </span>
+                ))
+            }
 
         </section>
     )

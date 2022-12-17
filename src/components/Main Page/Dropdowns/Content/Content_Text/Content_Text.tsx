@@ -7,7 +7,7 @@ const Content_Text = () => {
     return (
         <article className="content-text">
 
-            <p className="header">Lorem ipsum dolor sitamet elit</p>
+            <p className="header">We provide best services in the Europe</p>
             <p className='text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum cupiditate, veritatis iure eaque omnis sequi consequuntur accusantium! Autem, animi distinctio nihil voluptas a mollitia repudiandae qui consectetur, quas error vel.</p>
             <Link to='/about'>About us</Link>
 

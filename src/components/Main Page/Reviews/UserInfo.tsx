@@ -1,12 +1,13 @@
 import React from 'react'
+import { UserReview } from '../../../interfaces/HomepageInterfaces'
 import FigureImage from '../../Common/FigureImage'
 
-const UserInfo = () => {
+const UserInfo = ({avatar, name}: UserReview) => {
     return (
         <section className="user">
 
-            <FigureImage source='https://www.w3schools.com/howto/img_avatar.png' altTxt='Avatar' />
-            <p>Username Conqesut</p>
+            <FigureImage source={avatar} altTxt='Avatar' />
+            <p>{name}</p>
 
         </section>
     )

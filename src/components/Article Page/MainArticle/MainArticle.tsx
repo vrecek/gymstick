@@ -1,21 +1,25 @@
 import React from 'react'
 import FigureImage from '../../Common/FigureImage'
-import img from '../../../images/blog/blog1.jpg'
 import TagsCategory from './TagsCategory'
 import Text from './Text'
 import Path from './Path'
+import { ArticleType } from '../../../interfaces/ArticleType'
 
-const MainArticle = () => {
+const MainArticle = ({article}: {article: ArticleType}) => {
+    const {tags, image, category, title, posted} = article
+
     return (
         <article className='main'>
 
             <Path />
 
-            <FigureImage source={img} altTxt='Article' />
+            <FigureImage source={image} altTxt='Article' />
 
-            <TagsCategory />
+            <TagsCategory tags={tags} category={category} />
 
-            <h1>Lorem ipsum dolor sitamet coqnestur</h1>
+            <p className="date">{posted}</p>
+
+            <h1>{title}</h1>
 
             <Text />
 

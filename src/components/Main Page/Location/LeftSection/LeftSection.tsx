@@ -5,7 +5,7 @@ const LeftSection = () => {
     return (
         <article className="left-section">
 
-            <p className="header">Lorem ipsum dolorsit amet</p>
+            <p className="header">Where are we located?</p>
             <p className="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores dignissimos suscipit veritatis.</p>
 
             <Details />

@@ -51,6 +51,7 @@ section.reviews {
 
                         img {
                             @include FullSize;
+                            object-fit: cover;
                         }
                     }
     

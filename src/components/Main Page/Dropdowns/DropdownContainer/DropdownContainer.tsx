@@ -9,7 +9,7 @@ const DropdownContainer = ({setContent}: ChangeContent) => {
     const options: DropdownOptionArray[] = [
         {
             header: 'See our offer',
-            hiddenText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam dolore expedita, sed dolorem laudantium corrupti nesciunt, sunt laboriosam mollitia aliquid officiis? Ea doloribus molestiae aperiam ullam neque eum maiores asperiores.  Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti aspernatur ad laudantium magnam molestiae eius, dignissimos suscipit exercitationem libero repudiandae tempore quae praesentium molestias placeat hic quis! Tempore, maxime iusto?',
+            hiddenText: 'Nam finibus odio a nisl consectetur, vel rutrum sapien imperdiet. Donec non feugiat nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec tempus nulla non metus interdum ultrices eget id quam. In efficitur diam non dolor sagittis, vitae viverra massa tempor. Donec a rutrum sapien. Praesent ut libero ac tortor dignissim pulvinar. Quisque ac est elementum, elementum metus at, molestie massa. ',
             ddIndex: 0,
             allDds: allDds,
             topic: 'Stuff',
@@ -18,7 +18,7 @@ const DropdownContainer = ({setContent}: ChangeContent) => {
 
         {
             header: 'Explore our blog',
-            hiddenText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam dolore expedita, sed dolorem laudantium corrupti nesciunt, sunt laboriosam mollitia aliquid officiis? Ea doloribus molestiae aperiam ullam neque eum maiores asperiores.  Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti aspernatur ad laudantium magnam molestiae eius, dignissimos suscipit exercitationem libero repudiandae tempore quae praesentium molestias placeat hic quis! Tempore, maxime iusto?',
+            hiddenText: 'Duis vestibulum elementum tempus. Fusce placerat dui turpis, quis convallis odio commodo a. Maecenas in nulla vel enim hendrerit efficitur. Integer pulvinar dolor ut tristique pretium. Donec viverra velit vel justo fringilla finibus. Vestibulum turpis purus, tempor ac elementum sed, rutrum non lacus. Curabitur sagittis enim vitae varius aliquet. Nam mattis pellentesque enim auctor sodales.',
             ddIndex: 1,
             allDds: allDds,
             topic: 'Blog',
@@ -27,7 +27,7 @@ const DropdownContainer = ({setContent}: ChangeContent) => {
 
         {
             header: 'Check our socials',
-            hiddenText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam dolore expedita, sed dolorem laudantium corrupti nesciunt, sunt laboriosam mollitia aliquid officiis? Ea doloribus molestiae aperiam ullam neque eum maiores asperiores.  Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti aspernatur ad laudantium magnam molestiae eius, dignissimos suscipit exercitationem libero repudiandae tempore quae praesentium molestias placeat hic quis! Tempore, maxime iusto?',
+            hiddenText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam dolore expedita, sed dolorem laudantium corrupti nesciunt, sunt laboriosam mollitia aliquid officiis? Ea doloribus molestiae aperiam ullam neque eum maiores asperiores.  Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti aspernatur ad laudantium magnam molestiae eius, dignissimos suscipit exercitationem libero repudiandae tempore quae praesentium molestias placeat hic quis!',
             ddIndex: 2,
             allDds: allDds,
             topic: 'Socials',

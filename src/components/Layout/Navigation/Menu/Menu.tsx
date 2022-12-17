@@ -8,7 +8,6 @@ import ToggleMenu from './ToggleMenu'
 const Menu = () => {
     const list: LinksList<string>[] = [
         { text: 'Homepage', url: '/', cname: 'home' },
-        { text: 'Offer', url: '/offer' },
         { text: 'Blog', url: '/blog' },
         { text: 'Shop', url: '/shop' },
         { text: 'About', url: '/about' },

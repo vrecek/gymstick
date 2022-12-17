@@ -1,22 +1,25 @@
 import React from 'react'
 import '../../../../../css/Content_Blog.css'
-import Button from '../../../../Common/Button'
 import Informations from './Informations'
 import Paragraphs from './Paragraphs'
-import blog from '../../../../../images/blog.jpg'
 import FigureImage from '../../../../Common/FigureImage'
+import Article from '../../../../../functions/ArticleFunctions'
+import { Link } from 'react-router-dom'
 
 const Content_Blog = () => {
+    const {image, shortPara, tags, id, category, title} = new Article().getCard()
+
+
     return (
         <article className="content-blog">
 
-            <Informations />
+            <Informations tags={tags} category={category} />
 
-            <FigureImage source={blog} altTxt='Blog' />
+            <FigureImage source={image} altTxt='Blog' />
 
-            <Paragraphs />
+            <Paragraphs title={title} text={shortPara} />
 
-            <Button text='Read more' />
+            <Link to={`/article/${id}`}>Read more</Link>
 
         </article>
     )

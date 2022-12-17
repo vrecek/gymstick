@@ -3,7 +3,7 @@ import Product, { ProductCard } from '../../functions/ProductFunctions'
 import OneCard from '../Main Page/Dropdowns/Content/Content_Card/OneCard'
 
 const ProductsSection = () => {
-    const products: ProductCard[] = Product.getAllCards()
+    const products: ProductCard[] = new Product().getAll()
 
 
     return (

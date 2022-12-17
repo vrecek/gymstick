@@ -6,7 +6,7 @@ const HeaderIcon = () => {
     return (
         <section className="header-icon">
 
-            <h3>Conqestur alit</h3>
+            <h3>Service certificate</h3>
 
             <Icon><FaWeightHanging /></Icon>
 

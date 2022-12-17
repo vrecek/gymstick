@@ -1,28 +1,27 @@
 import React from 'react'
-import img from '../../images/blog/blog1.jpg'
-import Button from '../Common/Button'
 import FigureImage from '../Common/FigureImage'
 import Tags from '../Main Page/Dropdowns/Content/Content_Blog/Tags'
 import Category from '../Main Page/Dropdowns/Content/Content_Blog/Category'
+import { ArticlePreview } from '../../functions/ArticleFunctions'
+import { Link } from 'react-router-dom'
 
-const OneArticle = () => {
+const OneArticle = ({title, shortPara, category, image, tags, id}: ArticlePreview) => {
     return (
         <article className="one-article">
 
-            <FigureImage source={img} altTxt='Article' />
+            <FigureImage source={image} altTxt='Article' />
 
             <div className='wrap'>
 
-                <p className="header">Lorem ipsum dolorsit amet coqnestur</p>
-                <p className="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam velit.</p>
-                <Button text='Read more' />
-
+                <p className="header">{title}</p>
+                <p className="text">{shortPara}</p>
+                <Link to={`/article/${id}`}>Read more</Link>
 
             </div>
 
-            <Category>Dolore</Category>
+            <Category>{category}</Category>
 
-            <Tags />
+            <Tags tags={tags} />
 
         </article>
     )

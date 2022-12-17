@@ -25,7 +25,7 @@ const PRODUCT_PAGE = () => {
 
         setTimeout(() => {
             try {
-                const searchedProduct: ProductType | null = Product.getOne(id)
+                const searchedProduct: ProductType | null = new Product().getOne(id)
     
                 if(!searchedProduct) {
                     n('/', { replace: true })

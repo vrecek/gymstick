@@ -1,13 +1,14 @@
 import React from 'react'
+import { BlogInfo } from '../../../../../interfaces/HomepageInterfaces'
 import Category from './Category'
 import Tags from './Tags'
 
-const Informations = () => {
+const Informations = ({tags, category}: BlogInfo) => {
     return (
         <section className="informations">
 
-            <Tags />
-            <Category>Category</Category>
+            <Tags tags={tags} />
+            <Category>{category}</Category>
 
         </section>
     )

@@ -14,6 +14,11 @@ main.article-page {
         @include Center(75%);
         margin-bottom: 3em;
 
+        p.date {
+            font-weight: 500;
+            margin-bottom: .5em;
+        }
+
         section.tags-category {
             @include Flex(sb, c);
             margin: .25em 0 3em 0;

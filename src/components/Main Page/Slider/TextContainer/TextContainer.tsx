@@ -10,7 +10,7 @@ const TextContainer = () => {
     return (
         <article className="text-container">
 
-            <p className="header">Lorem ipsum conqestur elit amet</p>
+            <p className="header">Looking for a high quality products?</p>
             <p className="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, corporis beatae. Soluta molestias cupiditate id harum cumque alias illo neque, voluptatum quisquam debitis placeat iste optio.</p>
             <Button action={() => n('/shop')} text='View products' />
 

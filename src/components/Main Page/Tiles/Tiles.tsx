@@ -17,21 +17,21 @@ const Tiles = () => {
         { 
             icon: <GiWeightLiftingUp />, 
             header: 'Gym pass', 
-            text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita, accusantium illo, vero laudantium, quo asperiores sapiente rem deserunt', 
+            text: 'Praesent tempor ullamcorper massa, in luctus mi pretium at. Curabitur a tellus a nunc efficitur scelerisque at a ante', 
             btnText: 'Explore', btnFunc: () => scroller.scrollTo('offer', scrollOptions) 
         },
 
         { 
             icon: <AiOutlineQuestionCircle />, 
             header: 'Contact', 
-            text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita, accusantium illo, vero laudantium, quo asperiores sapiente rem deserunt', 
+            text: 'Nulla sem libero, hendrerit sit amet metus porttitor, condimentum convallis quam. Quisque lacinia egestas laoreet', 
             btnText: 'Explore', btnFunc: () => n('/contact') 
         },
 
         { 
             icon: <FaMoneyBillAlt />, 
             header: 'Products', 
-            text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita, accusantium illo, vero laudantium, quo asperiores sapiente rem deserunt', 
+            text: 'Cras dictum vitae urna id iaculis. Nunc porttitor ante ac massa placerat volutpat. Praesent viverra metus vel arcu gravida', 
             btnText: 'Explore', btnFunc: () => n('/shop')  
         }
     ]

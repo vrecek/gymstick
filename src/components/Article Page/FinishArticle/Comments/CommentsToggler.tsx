@@ -1,9 +1,9 @@
 import React from 'react'
 import { MdKeyboardArrowDown } from 'react-icons/md'
-import Client, { DD } from '../../../../functions/Client'
+import Client, { Aliases, DD } from '../../../../functions/Client'
 import Icon from '../../../Common/Icon'
 
-const CommentsToggler = () => {
+const CommentsToggler = ({children}: Aliases.Text<number>) => {
     const dd: DD.DropDown = new Client.DropDown(500)
 
     const toggleComments = (e: React.MouseEvent): void => {
@@ -25,7 +25,7 @@ const CommentsToggler = () => {
     return (
         <section onClick={toggleComments} className="toggle-comments">
 
-            <p className="finish-header">Comments (99)</p>
+            <p className="finish-header">Comments ({children})</p>
 
             <Icon><MdKeyboardArrowDown /></Icon>
 

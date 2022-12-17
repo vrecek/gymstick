@@ -1,5 +1,6 @@
 import Products from "../data/Products";
 import { ProductType } from "../interfaces/ProductType";
+import Options from "./AbstractOptions";
 
 export type ProductCard = {
     image: string
@@ -8,40 +9,15 @@ export type ProductCard = {
     name: string
 }
 
-export default class Product {
-    private static randomIndex(): number {
-        return ~~(Math.random() * Products.length)
+
+export default class Product extends Options<ProductCard, ProductType> {
+    public constructor() {
+        super(Products)
     }
 
 
-    private static shuffleProducts<T = any>(array: T[]): T[] {
-        let currentIndex = array.length,
-            randomIndex
-
-
-        while (currentIndex != 0) {
-            randomIndex = Math.floor(Math.random() * currentIndex)
-            currentIndex--;
-
-            [array[currentIndex], array[randomIndex]] = 
-            [array[randomIndex], array[currentIndex]]
-        }
-
-        return array
-    }
-
-
-    public static getOne(id?: string): ProductType | null {
-        if(!id) return null
-
-        const product = Products.filter(x => x.id === id)?.[0]
-
-        return product ?? null
-    }
-
-
-    public static getAllCards(): ProductCard[] {
-        return this.shuffleProducts<ProductCard>(
+    public getAll(): ProductCard[] {
+        return this.shuffleProducts(
             Products.map(x => {
                 return {
                     image: x.image,
@@ -54,8 +30,8 @@ export default class Product {
     }
 
     
-    public static getCard(): ProductCard {
-        const {image, price, id, name}: ProductType = Products[this.randomIndex()]        
+    public getCard(): ProductCard {
+        const {image, price, id, name}: ProductType = this.itemArray[this.randomIndex(this.itemArray.length)]        
 
         return {
             image,

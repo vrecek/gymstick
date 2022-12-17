@@ -1,5 +1,7 @@
 import React from 'react'
 import { AiOutlineQuestion } from 'react-icons/ai'
+import { BiStreetView, BiTimeFive } from 'react-icons/bi'
+import { FaCity } from 'react-icons/fa'
 import Icon from '../../../Common/Icon'
 
 const Details = () => {
@@ -8,20 +10,22 @@ const Details = () => {
 
             <div>
 
-                <Icon><AiOutlineQuestion /></Icon>
-                <p>Lorem ipsum</p>
+                <Icon><FaCity /></Icon>
+                <p>Berlin</p>
 
             </div>
+            
             <div>
 
-                <Icon><AiOutlineQuestion /></Icon>
-                <p>Lorem ipsum</p>
+                <Icon><BiStreetView /></Icon>
+                <p>Doloresit 24</p>
 
             </div>
+
             <div>
 
-                <Icon><AiOutlineQuestion /></Icon>
-                <p>Lorem ipsum</p>
+                <Icon><BiTimeFive /></Icon>
+                <p>8AM - 10PM</p>
 
             </div>
 

@@ -1,18 +1,19 @@
 import React from 'react'
 import '../../../css/FinishArticle.css'
+import { ArticleMisc } from '../../../interfaces/ArticleInterfaces'
 import Comments from './Comments/Comments'
 import Miscellaneous from './Miscellaneous/Miscellaneous'
 import Related from './Related/Related'
 
-const FinishArticle = () => {
+const FinishArticle = ({likes, dislikes, comments, views, related}: ArticleMisc) => {
     return (
         <section className="finish-article">
 
-            <Miscellaneous />
+            <Miscellaneous related={related} views={views} commentsNumber={comments.length} dislikes={dislikes} likes={likes} />
 
-            <Comments />
+            <Comments comments={comments} />
 
-            <Related />
+            <Related related={related} />
 
         </section>
     )

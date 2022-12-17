@@ -13,7 +13,7 @@ const TextSection = () => {
 
             <IntroductionTextContainer />
 
-            <Button action={() => scroller.scrollTo('offer', scrollOptions)} text='See our offer' />
+            <Button action={() => scroller.scrollTo('dropdowns', scrollOptions)} text='See our offer' />
 
         </article>
     )

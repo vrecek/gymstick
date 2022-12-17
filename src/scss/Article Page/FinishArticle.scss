@@ -105,33 +105,26 @@ section.finish-article {
                     position: relative;
                     @include Flex(sb, none, c);
     
-                    div.title-desc {
-                        p {
-                            &.header {
-                                font-size: 1.75rem;
-                                font-weight: 600;
-                                margin-bottom: .25em;
-                                width: 50%;
-                            }
-    
-                            &.text {
-                                width: 70%;
-                                color: #505050;
-                            }
+                    p {
+                        &.header {
+                            font-size: 1.75rem;
+                            font-weight: 600;
+                            margin-bottom: .25em;
+                            width: 50%;
                         }
-                    }
-    
-                    p.date {
-                        font-size: .9rem;
-                        font-weight: 600;
-                    }
-    
-                    p.category {
-                        position: absolute;
-                        right: 0;
-                        top: 0;
-                        font-style: italic;
-                        font-weight: 500;
+
+                        &.date {
+                            font-size: .9rem;
+                            font-weight: 600;
+                        }
+
+                        &.category {
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                            font-style: italic;
+                            font-weight: 500;
+                        }
                     }
                 }
     

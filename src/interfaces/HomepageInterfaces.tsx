@@ -1,4 +1,23 @@
-import Client, { Aliases, DD } from "../functions/Client"
+import { Aliases, DD } from "../functions/Client"
+
+export type UserReview = {
+    name: string
+    avatar: string
+}
+
+export type Review = UserReview & {
+    text: string
+}
+
+export type BlogInfo = {
+    tags: string[]
+    category: string
+}
+
+export type BlogText = {
+    title: string
+    text: string
+}
 
 export type TileDetails = {
     icon: JSX.Element
