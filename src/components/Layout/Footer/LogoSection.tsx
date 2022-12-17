@@ -6,7 +6,7 @@ const LogoSection = () => {
         <section className="logo-section">
 
             <Logo />
-            <p className="text">Lorem ipsum dolor</p>
+            <p className="text">We care about you</p>
 
         </section>
     )

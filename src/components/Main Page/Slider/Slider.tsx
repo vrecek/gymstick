@@ -2,10 +2,18 @@ import React from 'react'
 import SliderContainer from './SliderContainer/SliderContainer'
 import TextContainer from './TextContainer/TextContainer'
 import '../../../css/Slider.css'
+import handleViewport from 'react-in-viewport'
+import { Viewport } from '../../../interfaces/CommonInterfaces'
 
-const Slider = () => {
+const Slider = ({forwardedRef, inViewport}: Viewport) => {
+    React.useEffect(() => {
+        forwardedRef.current.className = inViewport
+            ? 'slider-section viewport'
+            : 'slider-section'
+    }, [inViewport])
+
     return (
-        <section className="slider-section">
+        <section ref={forwardedRef} className="slider-section">
 
             <SliderContainer />
 
@@ -17,4 +25,4 @@ const Slider = () => {
     )
 }
 
-export default Slider
+export default handleViewport(Slider)

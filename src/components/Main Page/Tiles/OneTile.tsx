@@ -7,13 +7,17 @@ const OneTile = ({btnFunc, btnText, text, header, icon}: TileDetails) => {
     return (
         <article className="tile">
 
-            <Icon>{icon}</Icon>
+            <div className="wrap">
+                
+                <Icon>{icon}</Icon>
 
-            <p className="header">{header}</p>
+                <p className="header">{header}</p>
 
-            <p className="text">{text}</p>
+                <p className="text">{text}</p>
 
-            <Button action={btnFunc} text={btnText} />
+                <Button action={btnFunc} text={btnText} />
+
+            </div>
 
         </article>
     )

@@ -1,10 +1,12 @@
 import React from 'react'
+import handleViewport from 'react-in-viewport'
 import '../../../css/Offer.css'
+import { Viewport } from '../../../interfaces/CommonInterfaces'
 import { CardOptions, CardType } from '../../../interfaces/HomepageInterfaces'
 import Card from './Card'
 import OfferText from './OfferText'
 
-const Offer = () => {
+const Offer = ({forwardedRef, inViewport}: Viewport) => {
     const cards: CardOptions[] = [
         {
             type: CardType.BEGINNER,
@@ -28,13 +30,18 @@ const Offer = () => {
         }
     ]
 
+    React.useEffect(() => {
+        forwardedRef.current!.className = inViewport
+            ? 'container viewport'
+            : 'container'
+    }, [inViewport])
 
     return (
         <section className="offer">
 
             <OfferText />
 
-            <section className="container">
+            <section ref={forwardedRef} className="container">
 
                 {
                     cards.map((x, i) => (
@@ -56,4 +63,4 @@ const Offer = () => {
     )
 }
 
-export default Offer
+export default handleViewport(Offer)

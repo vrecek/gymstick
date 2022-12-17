@@ -7,6 +7,7 @@ section.offer {
     padding: 2em 1em;
     color: $clr-black;
     @include Flex(sa, c, c);
+    overflow: hidden;
 
     section.entry-text {
         @include Layer;
@@ -36,7 +37,6 @@ section.offer {
         @include Flex(sa);
         width: 100%;
         @include Layer;
-        
 
         article.card {
             width: 25%;
@@ -44,6 +44,7 @@ section.offer {
             background: rgb(240, 240, 240);
             padding: 2em;
             @include Flex(sb, none, c);
+            translate: 0 -100vh;
 
             p.type {
                 font-weight: 500;
@@ -118,6 +119,21 @@ section.offer {
                 }
 
                 &:hover { background: royalblue; }
+            }
+        }
+
+        &.viewport {
+            article.card {
+                animation: offerAnim 2s;
+                animation-fill-mode: forwards;
+
+                &:nth-child(2) { animation-delay: .4s;}
+                &:nth-child(3) { animation-delay: .8s;}
+            }
+    
+            @keyframes offerAnim {
+                0% { translate: 0 -100vh; }
+                100% { translate: 0 0; }
             }
         }
     }

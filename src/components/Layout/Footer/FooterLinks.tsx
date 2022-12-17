@@ -7,16 +7,14 @@ const FooterLinks = () => {
     const links: LinksList[][] = [
         [
             { text: 'Links', url: '/', cname: 'header' },
-            { text: 'Dolorem', url: '/' },
-            { text: 'Dolorem', url: '/' },
-            { text: 'Dolorem', url: '/' },
-            { text: 'Dolorem', url: '/' }
+            { text: 'Homepage', url: '/' },
+            { text: 'Blog', url: '/blog' },
+            { text: 'Shop', url: '/shop' },
         ],
 
         [
-            { text: 'Dolorem', url: '/', cname: 'margin' },
-            { text: 'Dolorem', url: '/' },
-            { text: 'Dolorem', url: '/' }
+            { text: 'About', url: '/about' },
+            { text: 'Contact', url: '/contact' }
         ]
     ]
 

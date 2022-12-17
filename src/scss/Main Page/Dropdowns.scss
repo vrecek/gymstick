@@ -19,7 +19,8 @@ section.dropdowns {
         color: $clr-black;
         padding: 1em;
         @include Flex(sa, none, c);
-
+        translate: -100vw 0;
+        
         section.option {
             section.header {
                 @include Flex(sb, c);
@@ -80,5 +81,17 @@ section.dropdowns {
         left: 25%;
         translate: -25% 0;
         transform: skew(-45deg);
+    }
+
+    &.viewport {
+        section.dropdown-container {
+            animation: ddAnim 2s;
+            animation-fill-mode: forwards;
+
+            @keyframes ddAnim {
+                0% { translate: -100vw 0; }
+                100% { translate: 0 0; }
+            }
+        }
     }
 }

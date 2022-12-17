@@ -3,6 +3,7 @@
 section.location {
     @include Flex(c, c);
     height: 100vh;
+    overflow: hidden;
 
     article.left-section {
         width: 35%;
@@ -27,6 +28,7 @@ section.location {
 
         section.details {
             @include Flex(sb);
+            translate: 0 100vh;
 
             div {
                 aspect-ratio: 1;
@@ -59,5 +61,19 @@ section.location {
     iframe {
         width: 35%;
         aspect-ratio: 1.25;
+    }
+
+    &.viewport {
+        article.left-section {
+            section.details {
+                animation: locationAnim 2.5s;
+                animation-fill-mode: forwards;
+
+                @keyframes locationAnim {
+                    0% { translate: 0 100vh; }
+                    100% { translate: 0; }
+                }
+            }
+        }
     }
 }

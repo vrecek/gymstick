@@ -11,7 +11,7 @@ import blog8 from '../images/blog/blog8.jpg'
 import blog9 from '../images/blog/blog9.jpg'
 import blog10 from '../images/blog/blog10.jpg'
 import blog11 from '../images/blog/blog11.jpg'
-// import blog12 from '../images/blog/blog12.jpg'
+import blog12 from '../images/blog/blog12.jpg'
 
 
 
@@ -96,7 +96,7 @@ const Articles: ArticleType[] = [
     {
         id: '5c73056125cd46dfb23e593175f4f327',
         image: blog3,
-        title: 'How to tell if a gym is suitable for you?',
+        title: 'How can you tell if a gym is suitable for you?',
         tags: ['Preparing', 'Gym', 'Sport'],
         text: '',
         category: 'Beginner',
@@ -137,7 +137,7 @@ const Articles: ArticleType[] = [
 
     {
         id: '5c745544a14d49509b88d12ccb504281',
-        image: blog5,
+        image: blog12,
         title: 'Consider those health tips during your trainings',
         tags: ['Training', 'Health', 'Sport'],
         text: '',
@@ -151,7 +151,7 @@ const Articles: ArticleType[] = [
 
     {
         id: '1567315b6e974bbf9a53fa39a615b6e0',
-        image: blog6,
+        image: blog5,
         title: 'How to spot a most common leg injuries?',
         tags: ['Sport', 'Injury', 'Health'],
         text: '',
@@ -200,7 +200,7 @@ const Articles: ArticleType[] = [
 
     {
         id: '049073d90e684d2b92a926f1f8529a78',
-        image: blog7,
+        image: blog6,
         title: 'Choose your ideal and balanced diet',
         tags: ['Health', 'Diet', 'Sport'],
         text: '',
@@ -403,7 +403,7 @@ const Articles: ArticleType[] = [
 
     {
         id: 'a125102574bf430d806b350571436e75',
-        image: blog11,
+        image: blog7,
         title: '10 things you definitely should not do at the gym',
         tags: ['Training', 'Gym', 'Sport'],
         text: '',

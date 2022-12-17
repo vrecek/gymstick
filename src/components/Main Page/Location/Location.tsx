@@ -1,10 +1,18 @@
 import React from 'react'
+import handleViewport from 'react-in-viewport'
 import '../../../css/Location.css'
+import { Viewport } from '../../../interfaces/CommonInterfaces'
 import LeftSection from './LeftSection/LeftSection'
 
-const Location = () => {
+const Location = ({forwardedRef, inViewport}: Viewport) => {
+    React.useEffect(() => {
+        forwardedRef.current!.className = inViewport
+            ? 'location viewport'
+            : 'location'
+    }, [inViewport])
+
     return (
-        <section className="location">
+        <section ref={forwardedRef} className="location">
 
             <LeftSection />
 
@@ -14,4 +22,4 @@ const Location = () => {
     )
 }
 
-export default Location
+export default handleViewport(Location)

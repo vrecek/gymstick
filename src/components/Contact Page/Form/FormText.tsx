@@ -5,7 +5,7 @@ const FormText = () => {
     return (
         <article className="form-text">
 
-            <p className="header">Lorem ipsum deolor sita</p>
+            <p className="header">Send us a message</p>
             <p className="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
 
             <MailCopy />

@@ -6,7 +6,7 @@ const FooterSocials = () => {
         <section className="footer-socials">
 
             <p className="header">Socials</p>
-            <p className="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla fuga.</p>
+            <p className="text">Check our social medias to be up to date, or if you want to contact us</p>
 
             <Socials />
 

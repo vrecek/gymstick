@@ -9,7 +9,7 @@ const Path = () => {
 
             <span onClick={() => n('/')}>Homepage</span>
             &#60;
-            <span onClick={() => n('/blogs')}>Blogs</span>
+            <span onClick={() => n('/blog')}>Blogs</span>
             &#60;
             <span className="disabled">Article</span>
 

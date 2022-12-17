@@ -3,3 +3,8 @@ export type LinksList<T = string> = {
     url: string
     cname?: string
 }
+
+export type Viewport = {
+    forwardedRef: any
+    inViewport: boolean
+}

@@ -9,8 +9,10 @@ import TextHeaderWrap from './TextHeaderWrap'
 import { NavigateFunction, useNavigate } from 'react-router-dom'
 import {scroller} from 'react-scroll'
 import { scrollOptions } from '../../../functions/scrollOptions'
+import handleViewport from 'react-in-viewport'
+import { Viewport } from '../../../interfaces/CommonInterfaces'
 
-const Tiles = () => {
+const Tiles = ({inViewport, forwardedRef}: Viewport) => {
     const n: NavigateFunction = useNavigate()
 
     const tiles: TileDetails[] = [
@@ -36,13 +38,18 @@ const Tiles = () => {
         }
     ]
 
+    React.useEffect(() => {
+        forwardedRef.current!.className = inViewport
+            ? 'container viewport'
+            : 'container'
+    }, [inViewport])
 
     return (
         <section className="tiles">
 
             <TextHeaderWrap />
 
-            <section className="container">
+            <section ref={forwardedRef} className="container">
 
                 {
                     tiles.map((x, i) => (
@@ -63,4 +70,4 @@ const Tiles = () => {
     )
 }
 
-export default Tiles
+export default handleViewport(Tiles)
