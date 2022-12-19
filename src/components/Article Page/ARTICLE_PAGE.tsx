@@ -6,16 +6,19 @@ import FinishArticle from './FinishArticle/FinishArticle'
 import { ArticleType } from '../../interfaces/ArticleType'
 import Article from '../../functions/ArticleFunctions'
 import { ArticleState, RelatedType } from '../../interfaces/ArticleInterfaces'
-import { NavigateFunction, useNavigate, useParams } from 'react-router-dom'
+import { Location, NavigateFunction, useLocation, useNavigate, useParams } from 'react-router-dom'
 import Client, { LOAD } from '../../functions/Client'
 
 const ARTICLE_PAGE = () => {
     const [article, setArticle] = React.useState<ArticleState>(null),
            {id} = useParams(),
-           n: NavigateFunction = useNavigate()
+           n: NavigateFunction = useNavigate(),
+           loc: Location = useLocation()
 
 
     React.useEffect(() => {
+        window.scrollTo(0, 0)
+
         const load: LOAD.Loading = new Client.Loading()
 
         load
@@ -53,7 +56,7 @@ const ARTICLE_PAGE = () => {
             }         
         }, 500);
 
-    }, [])
+    }, [loc])
 
 
     if(article) {

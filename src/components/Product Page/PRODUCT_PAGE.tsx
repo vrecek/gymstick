@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavigateFunction, useNavigate, useParams } from 'react-router-dom'
+import { Location, NavigateFunction, useLocation, useNavigate, useParams } from 'react-router-dom'
 import '../../css/ProductPage.css'
 import Client, { LOAD } from '../../functions/Client'
 import Product from '../../functions/ProductFunctions'
@@ -10,10 +10,13 @@ import MainContent from './MainContent'
 const PRODUCT_PAGE = () => {
     const [product, setProduct] = React.useState<ProductType | null>(null),
           {id} = useParams(),
-          n: NavigateFunction = useNavigate()
+          n: NavigateFunction = useNavigate(),
+          loc: Location = useLocation()
 
 
     React.useEffect(() => {
+        window.scrollTo(0, 0)
+
         const load: LOAD.Loading = new Client.Loading()
 
         load
@@ -39,7 +42,7 @@ const PRODUCT_PAGE = () => {
                 load.remove()
             }
         }, 500)
-    }, [])
+    }, [loc])
 
 
     if(product)
