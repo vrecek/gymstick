@@ -1,6 +1,6 @@
 import React from 'react';
 import './css/index.css'
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import {HashRouter, Route, Routes} from 'react-router-dom'
 import MAIN_PAGE from './components/Main Page/MAIN_PAGE';
 import CONTACT_PAGE from './components/Contact Page/CONTACT_PAGE';
 import SHOP_PAGE from './components/Shop Page/SHOP_PAGE';
@@ -15,7 +15,7 @@ function App() {
     return (
         <div className="App">
             
-            <Router>
+            <HashRouter>
 
                 <Routes>
 
@@ -34,7 +34,7 @@ function App() {
 
                 <LayoutArrow />
 
-            </Router>
+            </HashRouter>
 
         </div>
     )
