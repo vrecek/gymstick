@@ -7,6 +7,11 @@
 
 @import './config';
 
+div#root,
+div.App {
+    width: 100vw;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -65,5 +70,12 @@ body {
                 rotate: 360deg;
             }
         }
+    }
+}
+
+@media (max-width: 1000px) {
+    div#root,
+    div.App {
+        overflow-x: hidden;
     }
 }
