@@ -1,9 +1,18 @@
 import React from 'react'
 import { BiSearch } from 'react-icons/bi'
-import { Aliases } from '../../functions/Client'
+import { SearchbarOptions } from '../../interfaces/CommonInterfaces'
 import Icon from '../Common/Icon'
 
-const Searchbar = ({children}: Aliases.Text) => {
+const Searchbar = <T,>({children, setFunc}: SearchbarOptions) => {
+    const searchItems = (e: React.ChangeEvent): void => {
+        const input: HTMLInputElement = e.target as HTMLInputElement,
+              {value} = input
+
+
+        setFunc(value)
+    }
+
+
     return (
         <section className="searchbar">
 
@@ -11,7 +20,7 @@ const Searchbar = ({children}: Aliases.Text) => {
 
             <div>
 
-                <input type='text' spellCheck='false' />
+                <input onChange={searchItems} type='text' spellCheck='false' />
                 <Icon><BiSearch /></Icon>
 
             </div>

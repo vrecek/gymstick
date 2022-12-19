@@ -4,9 +4,45 @@ import '../../css/Blog.css'
 import Searchbar from '../Shop Page/Searchbar'
 import OneArticle from './OneArticle'
 import Article, { ArticlePreview } from '../../functions/ArticleFunctions'
+import { SearchItems } from '../../interfaces/CommonInterfaces'
 
 const BLOG_PAGE = () => {
-    const articles: ArticlePreview[] = new Article().getAll()
+    const articleUtil = new Article()
+
+    const [articles, setArticles] = React.useState<SearchItems<ArticlePreview>>({
+        original: articleUtil.getAll(),
+        items: articleUtil.getAll()
+    })
+
+    const searchArticles = (value: string) => {
+        if(value.length === 0) {
+            setArticles(curr => {
+                curr.items = articles.original
+    
+                return {...curr}
+            })
+
+            return
+        }
+
+        if(value.length < 3) return
+
+
+        const rx: RegExp = new RegExp(value, 'i')
+
+        const searched = articles.original.filter(
+            x => rx.test(x.title) 
+            || x.tags.some(
+                    y => y.toLowerCase() === value.toLowerCase()
+                )
+        )
+
+        setArticles(curr => {
+            curr.items = searched
+
+            return {...curr}
+        })
+    }
 
 
     return (
@@ -14,12 +50,12 @@ const BLOG_PAGE = () => {
 
             <main className="blog-page">
 
-                <Searchbar>Blog</Searchbar>
+                <Searchbar setFunc={searchArticles}>Blog</Searchbar>
 
                 <section className="container">
 
                     {
-                        articles.map(x => (
+                        articles.items.map(x => (
                             <OneArticle
                                 key={x.id}
                                 category={x.category}
