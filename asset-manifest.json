@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/gymstick/static/css/main.27196e4a.css",
+    "main.css": "/gymstick/static/css/main.19006ab9.css",
     "main.js": "/gymstick/static/js/main.c58143a2.js",
     "static/js/787.9a61c2f0.chunk.js": "/gymstick/static/js/787.9a61c2f0.chunk.js",
     "static/media/ddmv.mp4": "/gymstick/static/media/ddmv.c8c8719b9dfc5de43246.mp4",
@@ -59,12 +59,12 @@
     "static/media/blog10.jpg": "/gymstick/static/media/blog10.9ec99b1f3719a597c29a.jpg",
     "static/media/glov2-2.jpeg": "/gymstick/static/media/glov2-2.2436e1caade55415b826.jpeg",
     "index.html": "/gymstick/index.html",
-    "main.27196e4a.css.map": "/gymstick/static/css/main.27196e4a.css.map",
+    "main.19006ab9.css.map": "/gymstick/static/css/main.19006ab9.css.map",
     "main.c58143a2.js.map": "/gymstick/static/js/main.c58143a2.js.map",
     "787.9a61c2f0.chunk.js.map": "/gymstick/static/js/787.9a61c2f0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.27196e4a.css",
+    "static/css/main.19006ab9.css",
     "static/js/main.c58143a2.js"
   ]
 }
