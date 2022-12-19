@@ -8,7 +8,7 @@ const Content_Text = () => {
         <article className="content-text">
 
             <p className="header">We provide best services in the Europe</p>
-            <p className='text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum cupiditate, veritatis iure eaque omnis sequi consequuntur accusantium! Autem, animi distinctio nihil voluptas a mollitia repudiandae qui consectetur, quas error vel.</p>
+            <p className='text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum cupiditate, veritatis iure eaque omnis sequi consequuntur accusantium! Autem, animi distinctio nihil voluptas.</p>
             <Link to='/about'>About us</Link>
 
             <video muted autoPlay loop>

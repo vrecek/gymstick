@@ -6,6 +6,7 @@ section.finish-article {
     
     p.finish-header {
         font-size: 1.5rem;
+        @include Clamp(1, 6, 1.5);
         font-weight: 700;
         margin-bottom: 3em;
     }
@@ -24,7 +25,7 @@ section.finish-article {
                 }
 
                 span {
-                    @include Rectangle(40px);
+                    @include Rectangle(35px);
                     rotate: 180deg;
                     transition: .5s;
                 }
@@ -41,6 +42,8 @@ section.finish-article {
                     figure {
                         width: 8%;
                         aspect-ratio: 1;
+                        flex-shrink: 0;
+                        height: max-content;
 
                         img {
                             @include FullSize;
@@ -50,14 +53,16 @@ section.finish-article {
 
                     section.text {
                         width: 90%;
+
                         p {
                             &.author {
                                 font-weight: 700;
                                 margin-bottom: 1em;
+                                @include Clamp(.85, 4, 1);
                             }
 
                             &.text {
-                                font-size: .95rem;
+                                @include Clamp(.85, 4, .95);
                             }
                         }
                     }
@@ -67,7 +72,7 @@ section.finish-article {
                         right: 0;
                         top: 0;
                         font-weight: 500;
-
+                        @include Clamp(.85, 4, 1);
                     }
                 }
             }
@@ -79,17 +84,18 @@ section.finish-article {
     
             div.info {
                 margin: 0 1.5em;
+                @include Flex(c, c, c);
     
                 span {
-                    @include Rectangle(60px);
+                    @include Rectangle(clamp(35px, 8vw, 60px));
                 }
     
                 p {
                     text-align: center;
                     margin-top: .25em;
                     font-weight: 600;
-                    font-size: 1.1rem;
                     letter-spacing: 1px;
+                    @include Clamp(1, 4, 1.1);
                 }
             }
         }
@@ -107,15 +113,15 @@ section.finish-article {
     
                     p {
                         &.header {
-                            font-size: 1.75rem;
                             font-weight: 600;
+                            @include Clamp(1.2, 6, 1.75);
                             margin-bottom: .25em;
                             width: 50%;
                         }
 
                         &.date {
-                            font-size: .9rem;
                             font-weight: 600;
+                            @include Clamp(.8, 4, 1);
                         }
 
                         &.category {
@@ -123,6 +129,7 @@ section.finish-article {
                             right: 0;
                             top: 0;
                             font-style: italic;
+                            @include Clamp(.8, 4, 1);
                             font-weight: 500;
                         }
                     }
@@ -131,6 +138,9 @@ section.finish-article {
                 figure {
                     width: 20%;
                     aspect-ratio: 1.75;
+                    flex-shrink: 0;
+                    min-width: 80px;
+                    height: max-content;
                     margin-right: 1em;
     
                     img {
@@ -138,6 +148,50 @@ section.finish-article {
                         object-fit: cover;
                     }
                 }
+            }
+        }
+    }
+
+    @media(max-width: 1000px) {
+        width: 100%;
+    }
+
+    @media(max-width: 768px) {
+        section {
+            &.related-articles {
+                article.related-article {
+                    section.text {
+                        p {
+                            &.header { width: 100%; margin-bottom: .75em; }
+                            &.category {
+                                top: auto;
+                                bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        section {
+            &.misc {
+                div.info {
+                    margin: 0 .75em;
+                }
+            }
+
+            &.related-articles {
+                article.related-article {
+                    figure {
+                        margin-right: .25em;
+                    }
+                }
+            }
+
+            &.comments {
+                section.toggle-comments { padding-bottom: 2em; }
             }
         }
     }

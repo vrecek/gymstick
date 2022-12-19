@@ -20,11 +20,6 @@ aside.layout-menu {
         margin: 0 2em 0 auto;
     }
 
-    section.socials,
-    ul.links.aside-list {
-        margin-left: 8em;
-    }
-
     section.socials {
         @include Flex(none, c);
         margin: 0 0 0 auto;
@@ -41,9 +36,10 @@ aside.layout-menu {
 
     ul.links.aside-list {
         list-style: none;
+        margin-left: 8em;
 
         li {
-            font-size: 1.5rem;
+            @include Clamp(1, 5, 1.5);
             padding: 1.5em 0;
             font-weight: 600;
             letter-spacing: 3px;
@@ -68,8 +64,8 @@ aside.layout-menu {
             }
 
             &.home {
-                font-size: 3rem;
                 padding: .75em 0;
+                @include Clamp(1.75, 7, 3);
                 color: $clr-grey;
                 font-weight: 800;
 
@@ -81,5 +77,9 @@ aside.layout-menu {
                 &::before { scale: 1; }
             }
         }
+    }
+
+    @media (max-width: 480px) {
+        ul.links.aside-list { margin-left: 2em; }
     }
 }

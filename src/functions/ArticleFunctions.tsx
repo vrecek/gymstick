@@ -18,12 +18,12 @@ export default class Article extends Options<ArticlePreview, ArticleType> {
     }
 
 
-    public getRelated(tags: string[], category: string, title: string): RelatedType[] {
+    public getRelated(tags: string[], category: string, title: string, id: string): RelatedType[] {
         const related = Array.from(new Set([
             ...this.itemArray.filter(x => x.category === category).map(y => y.id),
             ...this.itemArray.filter(x => new RegExp(title, 'i').test(x.title)).map(y => y.id),
             ...this.itemArray.filter(x => x.tags.some(y => tags.includes(y))).map(y => y.id)
-        ]))
+        ])).filter(x => x !== id)
 
         const mappedRelated = related.map(x => {
             const {image, title, id, category, posted}: ArticleType = this.itemArray.filter(y => y.id === x)[0]

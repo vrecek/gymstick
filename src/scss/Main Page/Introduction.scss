@@ -38,8 +38,8 @@ section.introduction {
 
             p {
                 font-weight: 600;
-                font-size: 1.25rem;
                 letter-spacing: 1px;
+                @include Clamp(1, 4, 1.25);
             }
 
             span {
@@ -73,9 +73,8 @@ section.introduction {
         }
 
         figure {
-            width: 100%;
-            flex-grow: 1;
             @include Flex(fe, c);
+            height: 100%;
 
             img {
                 height: 100%;
@@ -109,18 +108,19 @@ section.introduction {
             h3 {
                 font-weight: 800;
                 font-family: 'Arvo', serif;
+                @include Clamp(.9, 4, 1);
             }
         }
 
         section.text-container {
             h2 {
-                font-size: 2.75rem;
                 margin-bottom: .25em;
+                @include Clamp(2, 8, 2.75);
                 font-weight: 800;
             }
 
             p {
-                font-size: 1.1rem;
+                @include Clamp(.9, 4, 1.1);
                 border-left: 3px solid $clr-orange;
                 padding-left: .55em;
             }
@@ -138,12 +138,52 @@ section.introduction {
             label {
                 color: $clr-white;
                 font-weight: 600;
-                font-size: 1.1rem;
+                @include Clamp(1, 4, 1.1);
             }
 
             &:hover {
                 background: orangered;
             }
         }
+    }
+
+    @media (max-width: 1000px) {
+        div.bg { display: none; }
+        section.image-section { figure {
+            justify-content: center;
+        } }
+    }
+
+    @media (max-width: 768px) {
+        height: auto;
+        min-height: 100vh;
+        padding: 2.5em .5em;
+        flex-direction: column;
+
+        article.text-section {
+            width: 100%;
+            text-align: center;
+
+            section.header-icon {
+                margin-bottom: 2em;
+            }
+        }
+
+        button {
+            margin-top: 2em;
+        }
+
+        section.image-section {
+            width: 100%;
+            position: static;
+
+            figure {
+                display: none;
+            }
+
+            section.redirect {
+                padding: 0;
+            }
+        }   
     }
 }

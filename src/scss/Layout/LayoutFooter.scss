@@ -13,15 +13,15 @@ footer.layout-footer {
 
     section.wrap {
         @include Flex(sb);
-        padding: 8em 3em;
+        padding: clamp(4em, 10vw, 8em) 3em;
         
         section {
             &.logo-section {
                 width: 20%;
                 
                 p.text {
-                    font-size: 1rem;
-                    margin-top: 2em;
+                    margin-top: .25em;
+                    @include Clamp(.9, 4, 1);
                     letter-spacing: 1px;
                     color: $clr-grey;
                     font-weight: 600;
@@ -112,5 +112,38 @@ footer.layout-footer {
         background: #252525;
         padding: 1em 0;
         font-weight: 500;
+    }
+
+    @media (max-width: 1000px) {
+        section.wrap {
+            flex-direction: column;
+            align-items: center;
+
+            section {
+                &.logo-section,
+                &.links,
+                &.footer-socials { width: 100%; }
+
+                &.links {
+                    margin: 4em 0;
+                }
+
+                &.logo-section,
+                &.footer-socials {
+                    @include Flex(c, c, c);
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1000px) {
+        section.wrap {
+            section {
+                &.logo-section,
+                &.footer-socials {
+                    align-items: flex-start;
+                }
+            }
+        }
     }
 }

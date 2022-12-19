@@ -8,13 +8,14 @@ main.blog-page {
 
     section.container {
         margin-top: 3em;
-        @include Flex(sa);
+        @include Flex(sa, c);
+        align-items: stretch;
         flex-wrap: wrap;
 
         article {
             margin: .75em;
             width: 45%;
-            aspect-ratio: 1.75;
+            min-width: 480px;
             padding: 1.25em;
             border-radius: .25em;
             color: $clr-black;
@@ -26,10 +27,8 @@ main.blog-page {
             text-shadow: 0 0 2px $clr-black;
 
             section.tags {
-                position: absolute;
+                position: relative;
                 z-index: 2;
-                right: .75em;
-                top: .75em;
                 display: flex;
 
                 span {
@@ -56,13 +55,14 @@ main.blog-page {
             div.wrap {
                 position: relative;
                 z-index: 2;
-                @include Flex(fe, fs, c);
+                @include Flex(sb, fs, c);
                 @include FullSize;
 
                 p {
                     &.header {
                         font-weight: 800;
-                        font-size: 2.25rem;
+                        margin: 1em 0;
+                        @include Clamp(1.75, 5, 2.25)
                     }
 
                     &.text {
@@ -83,6 +83,7 @@ main.blog-page {
                 border-radius: .25em;
                 color: $clr-white;
                 font-weight: 500;
+                @include Clamp(.9, 4, 1);
 
                 &:hover { background: royalblue; }
             }
@@ -105,8 +106,8 @@ main.blog-page {
         @include Flex(sb, c);
 
         h1 {
-            font-size: 2.25rem;
             text-shadow: 0 0 2px $clr-black;
+            @include Clamp(1.75, 8, 2.25);
             font-weight: 800;
         }
 
@@ -117,8 +118,8 @@ main.blog-page {
             input {
                 width: 100%;
                 padding: .75em;
-                font-size: 1rem;
                 border-radius: .2em;
+                @include Clamp(.9, 4, 1);
                 outline: 0;
                 border: 1px solid $clr-grey;
                 padding-right: 40px;
@@ -131,6 +132,42 @@ main.blog-page {
                 translate: 0 -50%;
                 @include Rectangle(30px);
                 color: $clr-black;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 2em .5em;
+
+        section.container {
+            article {
+                aspect-ratio: none;
+                min-width: auto;
+                width: 100%;
+                margin: .75em 0;
+                padding: .75em;
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        section.container {
+            article {
+                p.category {
+                    position: relative;
+                    z-index: 2;
+                    right: 0;
+                    bottom: 0;
+                    margin-top: 1em;
+                    text-align: right;
+                    width: 100%;
+                }
+            }
+        }
+
+        section.searchbar {
+            div {
+                width: 60%;
             }
         }
     }

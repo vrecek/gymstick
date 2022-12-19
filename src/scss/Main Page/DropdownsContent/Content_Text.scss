@@ -19,11 +19,12 @@ article.content-text {
     p {
         &.header {
             font-weight: 800;
-            font-size: 3rem;
+            @include Clamp(2, 8, 3);
         }
 
         &.text {
             margin: .25em 0 1em 0;
+            @include Clamp(.9, 4, 1);
         }
     }
 
@@ -33,6 +34,7 @@ article.content-text {
         padding: 1em 2em;
         background: orangered;
         cursor: pointer;
+        @include Clamp(.9, 4, 1);
         transition: .3s;
         border-radius: .25em;
         color: $clr-white;
@@ -40,4 +42,6 @@ article.content-text {
 
         &:hover { background: $clr-orange; }
     }
+
+    @media (max-width: 480px) { padding: 1em; }
 }

@@ -10,8 +10,8 @@ header.homepage-header {
     h1 {
         font-family: 'Arvo', serif;
         font-weight: 800;
-        font-size: 4.5rem;
         width: 80%;
+        @include Clamp(2.5, 10, 4.5);
         text-align: center;
         text-shadow: 0 0 5px orangered;
         translate: -100vw 0;
@@ -26,7 +26,7 @@ header.homepage-header {
     }
 
     p {
-        font-size: 1.25rem;
+        @include Clamp(.9, 4.5, 1.25);
         width: 50%;
         text-align: center;
         margin: 1em 0;
@@ -42,7 +42,6 @@ header.homepage-header {
     }
 
     button {
-        padding: 1.25em 2em;
         border-radius: 1em;
         background: transparent;
         border: 2px solid orange;
@@ -52,9 +51,11 @@ header.homepage-header {
 
         label {
             font-weight: 500;
-            font-size: 1.1rem;
             color: orange;
+            @include Clamp(.9, 4, 1.1);
             transition: .5s;
+            padding: 1.25em 2em;
+            display: block;
         }
 
         &:hover {
@@ -72,5 +73,12 @@ header.homepage-header {
 
             100% {opacity: 1;}
         }
+    }
+
+    @media (max-width: 480px) {
+        padding: 0 .5em;
+
+        h1,
+        p { width: 100%; }
     }
 }

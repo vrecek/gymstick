@@ -7,8 +7,8 @@ main.contact-page {
     color: $clr-black;
 
     h1 {
-        font-size: 2.25rem;
         font-weight: 800;
+        @include Clamp(1.75, 7, 2.25);
         padding: 2em;
     }
 
@@ -24,10 +24,6 @@ main.contact-page {
                 p.header {
                     font-size: 1.5rem;
                     font-weight: 700;
-                }
-
-                p.text {
-
                 }
 
                 section {
@@ -48,7 +44,7 @@ main.contact-page {
 
             form {
                 padding: 1em;
-                width: 40%;
+                width: 45%;
                 position: relative;
                 background: $clr-white;
 
@@ -77,8 +73,8 @@ main.contact-page {
                     width: 100%;
                     transition: .3s;
                     padding: .75em;
-                    font-size: .95rem;
                     border: 0;
+                    @include Clamp(.85, 4, .95);
                     outline: 0;
                     border-radius: .25em;
                     border-left: 2px solid $clr-orange;
@@ -129,7 +125,7 @@ main.contact-page {
                 @include Flex(sa);
 
                 span {
-                    @include Rectangle(90px);
+                    @include Rectangle(clamp(40px, 15vw, 90px));
                     cursor: pointer;
                     transition: .3s;
 
@@ -140,7 +136,7 @@ main.contact-page {
             h2 {
                 text-align: center;
                 margin-bottom: 4em;
-                font-size: 1.5rem;
+                @include Clamp(1, 6, 1.5);
                 font-weight: 700;
             }
         }
@@ -156,6 +152,35 @@ main.contact-page {
                         text-shadow: none;
                     }
                 }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        h1 { text-align: center; padding: 2em 0 1em 0; }
+
+        section {
+            &.contact-form {
+                margin: 5em 0 2em 0;
+                flex-direction: column;
+                padding: .5em;
+
+                article.form-text {
+                    width: 100%;
+                    margin-bottom: 4em;
+                }
+
+                form {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        section {
+            &.contact-form {
+                margin-top: 4em;
             }
         }
     }

@@ -327,7 +327,7 @@ const Articles: ArticleType[] = [
     {
         id: '1fdf201d3bb141e2a72a3473c92b0bec',
         image: blog10,
-        title: 'Make your everyday routine that will improve your health',
+        title: 'Everyday routine that will improve your health',
         tags: ['Training', 'Habits', 'Health'],
         text: '',
         category: 'Routine',

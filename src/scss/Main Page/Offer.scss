@@ -4,7 +4,7 @@ section.offer {
     min-height: 100vh;
     background: $bgTransparent;
     position: relative;
-    padding: 2em 1em;
+    padding: 3em 1em;
     color: $clr-black;
     @include Flex(sa, c, c);
     overflow: hidden;
@@ -24,8 +24,8 @@ section.offer {
             }
 
             &.text {
-                font-size: 1.1rem;
                 font-family: 'Arvo', serif;
+                @include Clamp(.95, 4, 1.1);
                 width: 50%;
                 margin: 0 auto;
                 text-shadow: 0 0 1px $clr-white;
@@ -37,9 +37,12 @@ section.offer {
         @include Flex(sa);
         width: 100%;
         @include Layer;
+        flex-wrap: wrap;
 
         article.card {
             width: 25%;
+            min-width: 350px;
+            margin: .75em;
             border-radius: .5em;
             background: rgb(240, 240, 240);
             padding: 2em;
@@ -85,6 +88,7 @@ section.offer {
 
                     p {
                         font-weight: 500;
+                        @include Clamp(.9, 4, 1);
                     }
 
                     &.true span {
@@ -98,8 +102,9 @@ section.offer {
             }
 
             p.desc {
-                margin: 1.5em 0;
+                margin: 1em 0;
                 opacity: .8;
+                @include Clamp(.9, 4, 1);
             }
 
             button {
@@ -147,5 +152,24 @@ section.offer {
         left: 25%;
         translate: -25% 0;
         transform: skew(45deg);
+    }
+    
+    @media (max-width: 1000px) { div.bg { display: none; } }
+
+    @media (max-width: 480px) {
+        padding: 3em .25em;
+
+        section.entry-text {
+            p { &.text { width: 100%; } }
+        }
+
+        section.container {
+            article.card {
+                @include ResetWidth;
+                margin: .75em 0;
+                width: 100%;
+                padding: 1em;
+            }
+        }
     }
 }

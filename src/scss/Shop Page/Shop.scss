@@ -15,6 +15,7 @@ main.shop-page {
 
         div.card {
             width: 19%;
+            min-width: 250px;
             border: 2px solid $clr-orange;
             border-radius: .25em;
             position: relative;
@@ -86,7 +87,7 @@ main.shop-page {
         @include Flex(sb, c);
 
         h1 {
-            font-size: 2.25rem;
+            @include Clamp(1.75, 8, 2.25);
             text-shadow: 0 0 2px $clr-black;
             font-weight: 800;
         }
@@ -112,6 +113,16 @@ main.shop-page {
                 translate: 0 -50%;
                 @include Rectangle(30px);
                 color: $clr-black;
+            }
+        }        
+    }
+
+    @media (max-width: 480px) {
+        padding: 2em .5em;
+
+        section.searchbar {
+            div {
+                width: 60%;
             }
         }
     }

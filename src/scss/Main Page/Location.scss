@@ -2,25 +2,31 @@
 
 section.location {
     @include Flex(c, c);
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
 
-    article.left-section {
+    article.left-section,
+    iframe {
         width: 35%;
+        min-width: 450px;
+    }
+
+    article.left-section {
         margin-right: 1em;
 
         p {
+            text-shadow: 0 0 1px $clr-black;
+
             &.header {
                 font-weight: 800;
-                font-size: 3rem;
-                
+                @include Clamp(2, 8, 3);                
             }
 
             &.text {
                 text-shadow: 0 0 2px $clr-black;
                 font-weight: 500;
                 margin-bottom: 2em;
-                font-size: 1.1rem;
+                @include Clamp(.9, 4, 1.1);                
                 border-left: 3px solid $clr-orange;
                 padding-left: .5em;
             }
@@ -53,13 +59,13 @@ section.location {
 
                 p {
                     font-weight: 700;
+                    @include Clamp(.9, 4, 1);
                 }
             }
         }
     }
 
     iframe {
-        width: 35%;
         aspect-ratio: 1.25;
     }
 
@@ -74,6 +80,44 @@ section.location {
                     100% { translate: 0; }
                 }
             }
+        }
+    }
+
+    @media (max-width: 1000px) {
+        flex-direction: column;
+        padding: 2em 0;
+
+        article.left-section {
+            width: 100%;
+            margin-bottom: 2em;
+            margin-right: 0;
+            min-width: auto;
+
+            p {
+                &.header {
+                    padding: 0 .5em;
+                }
+
+                &.text {
+                    padding: 0 1.25em;
+                    border: 0;
+                }
+            }
+
+            section.details {
+                padding: 0 .25em;
+
+                div {
+                    width: 33%;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        iframe {
+            @include ResetWidth;
+            width: 98%;
         }
     }
 }

@@ -18,8 +18,8 @@ article.content-blog {
         &.paragraphs {
             p {
                 &.title {
-                    font-size: 2.75rem;
                     font-weight: 700;
+                    @include Clamp(1.5, 8, 2.75);
                 }
 
                 &.text {
@@ -47,7 +47,7 @@ article.content-blog {
                     background: $clr-orange;
                     color: $clr-white;
                     font-weight: 600;
-                    font-size: .95rem;
+                    @include Clamp(.85, 3, .95);
                 }
             }
         }
@@ -66,7 +66,29 @@ article.content-blog {
         color: $clr-white;
         font-weight: 500;
         text-decoration: none;
+        @include Clamp(.9, 4, 1);
 
         &:hover { background: royalblue; }
+    }
+
+    @media (max-width: 1000px) {
+        section {
+            &.informations {
+                section.tags { margin-bottom: .5em; }
+            }
+        }
+
+        a {
+            margin-top: 2em;
+        }
+    }
+
+    @media (max-width: 480px) {
+        section {
+            &.informations {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
     }
 }

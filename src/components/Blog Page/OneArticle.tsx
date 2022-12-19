@@ -13,15 +13,14 @@ const OneArticle = ({title, shortPara, category, image, tags, id}: ArticlePrevie
 
             <div className='wrap'>
 
+                <Tags tags={tags} />
                 <p className="header">{title}</p>
                 <p className="text">{shortPara}</p>
                 <Link to={`/article/${id}`}>Read more</Link>
 
+                <Category>{category}</Category>
+
             </div>
-
-            <Category>{category}</Category>
-
-            <Tags tags={tags} />
 
         </article>
     )

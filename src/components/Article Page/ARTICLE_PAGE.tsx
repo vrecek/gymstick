@@ -40,7 +40,7 @@ const ARTICLE_PAGE = () => {
 
 
                 const {tags, title, category} = searchedArticle
-                const related: RelatedType[] = articleFuncs.getRelated(tags, category, title)
+                const related: RelatedType[] = articleFuncs.getRelated(tags, category, title, id!)
 
 
                 setArticle({

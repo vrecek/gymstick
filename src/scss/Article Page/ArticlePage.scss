@@ -17,6 +17,9 @@ main.article-page {
         p.date {
             font-weight: 500;
             margin-bottom: .5em;
+            border-left: 2px solid $clr-orange;
+            padding-left: .25em;
+            @include Clamp(.9, 4, 1);
         }
 
         section.tags-category {
@@ -25,7 +28,7 @@ main.article-page {
 
             p {
                 font-weight: 500;
-                font-size: 1rem;
+                @include Clamp(.8, 4, 1);
             }
 
             section.tags {
@@ -36,6 +39,7 @@ main.article-page {
                     border-radius: .25em;
                     margin-right: .25em;
                     padding: .5em;
+                    @include Clamp(.8, 4, 1);
                     color: $clr-white;
                     font-weight: 600;
                 }
@@ -57,6 +61,7 @@ main.article-page {
                 &:first-child { margin-left: 0; }
                 cursor: pointer;
                 transition: .5s;
+                @include Clamp(.85, 4, 1);
 
                 &:hover {
                     color: $clr-orange;
@@ -70,15 +75,15 @@ main.article-page {
         }
 
         h1 {
-            font-size: 3.5rem;
             font-weight: 800;
+            @include Clamp(2.25, 10, 3.5);
             margin-bottom: 1em;
         }
 
         p.text {
             line-height: 2em;
-            font-size: 1.1rem;
             font-weight: 500;
+            @include Clamp(1, 4, 1.1);
 
             span.header {
                 font-size: 1.5rem;
@@ -96,6 +101,16 @@ main.article-page {
                 @include FullSize;
                 object-fit: cover;
             }
+        }
+    }
+
+    @media (max-width: 1000px) {
+        width: 100%;
+        margin-bottom: 0;
+
+        article.main {
+            width: 100%;
+            padding: 1em 0;
         }
     }
 }

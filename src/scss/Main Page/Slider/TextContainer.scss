@@ -7,23 +7,23 @@ section.slider-section {
         
         p {
             &.header {
-                font-size: 3.5em;
                 font-weight: 800;
+                @include Clamp(2, 10, 3.5);
                 color: $clr-orange;
                 text-shadow: 0 0 2px $clr-black;
             }
 
             &.text {
                 color: $clr-black;
-                font-size: 1.1rem;
+                @include Clamp(.95, 4, 1.1);
                 margin: .75em 0 2em 0;
                 border-left: 3px solid $clr-blued;
                 padding-left: .5em;
+                text-shadow: 0 0 1px $clr-white;
             }
         }
 
         button {
-            padding: 1em 2em;
             background: $clr-blued;
             cursor: pointer;
             outline: 0;
@@ -33,13 +33,24 @@ section.slider-section {
 
             label {
                 color: $clr-white;
+                padding: 1em 2em;
+                @include Clamp(.9, 4, 1);
                 font-weight: 500;
+                display: block;
             }
 
             &:hover { 
                 border-radius: .25em;
                 background: royalblue; 
             }
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 4em;
+
+            p.text { border: 0; }
         }
     }
 }

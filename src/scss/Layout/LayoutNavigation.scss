@@ -8,7 +8,7 @@ nav.layout-navigation {
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 9;
+    z-index: 99999;
     color: $clr-white;
     transition: 1s;
 
@@ -25,6 +25,7 @@ nav.layout-navigation {
                 cursor: pointer;
                 transition: .5s;
                 position: relative;
+                @include Clamp(.8, 3, 1);
     
                 &::before {
                     position: absolute;
@@ -71,7 +72,16 @@ nav.layout-navigation {
             font-family: 'Arvo', serif;
             font-weight: 800;
             margin-left: .25em;
-            font-size: 1rem;
+            @include Clamp(.8, 3, 1);
         }
+    }
+
+    @media (max-width: 768px) { padding: .75em .5em; }
+    @media (max-width: 480px) {
+        padding: .75em 1em;
+
+        div.right-wrap { ul.links.nav-list {
+            display: none;
+        } }
     }
 }

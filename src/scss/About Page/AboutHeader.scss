@@ -5,6 +5,7 @@ header.about-header {
     height: calc(100vh - $navHeight);
     margin-top: $navHeight;
     @include Flex(c, c);
+    padding: .5em;
 
     article {
         position: relative;
@@ -28,8 +29,8 @@ header.about-header {
         }
 
         h1 {
-            font-size: 5rem;
             font-weight: 800;
+            @include Clamp(3, 15, 5);
             text-shadow: 0 0 2px $clr-black;
         }
     }

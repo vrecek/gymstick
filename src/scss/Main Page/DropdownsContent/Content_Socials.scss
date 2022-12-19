@@ -3,7 +3,7 @@
 article.content-socials {
     @include Flex(c, c, c);
     @include FullSize;
-    padding: 4em;
+    padding: 4em clamp(1em, 10vw, 4em);
     position: relative;
 
     div.bg2 {
@@ -42,7 +42,7 @@ article.content-socials {
 
         span {
             margin: 0 .5em;
-            @include Rectangle(60px);
+            @include Rectangle(clamp(40px, 10vw, 60px));
             cursor: pointer;
             transition: .8s;
             color: $clr-orange;
